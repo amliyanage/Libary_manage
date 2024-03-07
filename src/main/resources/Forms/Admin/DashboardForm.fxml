@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="1082.0" prefWidth="1611.0" stylesheets="@../../img/Styles/AdminDashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.AdminController.DashboardFormController">
+   <children>
+      <ImageView fitHeight="1093.0" fitWidth="1612.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/dashboard.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="140.0" layoutY="197.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+         <font>
+            <Font name="Inter Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="934.0" layoutY="196.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+         <font>
+            <Font name="Inter Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="141.0" layoutY="445.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+         <font>
+            <Font name="Inter Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="931.0" layoutY="445.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+         <font>
+            <Font name="Inter Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="198.0" layoutY="695.0" style="-fx-background-color: #FFFF;" text="1000" textFill="RED">
+         <font>
+            <Font name="Inter Bold" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
