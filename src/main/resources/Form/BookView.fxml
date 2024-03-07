@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="1084.0" prefWidth="1611.0" stylesheets="@../img/Styles/ViewBookPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.BookViewFormController">
+   <children>
+      <TextField layoutX="89.0" layoutY="89.0" promptText="Search Here" styleClass="search" />
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="99.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Searchicon.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="100.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Title" />
+      <Text layoutX="841.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Autor" />
+      <TextField editable="false" layoutX="836.0" layoutY="272.0" styleClass="text-field1" />
+      <Text layoutX="97.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Description" />
+      <TextArea editable="false" layoutX="96.0" layoutY="441.0" prefHeight="200.0" prefWidth="200.0" />
+      <Text layoutX="98.0" layoutY="823.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Genre" />
+      <TextField editable="false" layoutX="103.0" layoutY="827.0" prefHeight="52.0" prefWidth="577.0" styleClass="text-field1" />
+      <Text layoutX="875.0" layoutY="828.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Availability" />
+      <Label layoutX="879.0" layoutY="856.0" styleClass="label1" textFill="#830000">
+         <graphic>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lableText" text="Text" />
+         </graphic>
+      </Label>
+      <TextField editable="false" layoutX="102.0" layoutY="276.0" styleClass="text-field1" />
+   </children>
+</AnchorPane>
