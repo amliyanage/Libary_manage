@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.awt.*;
-
 public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -16,7 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Form/LoginPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Forms/MainDashboardPage.fxml"));
         Font.loadFont(getClass().getResourceAsStream("/path/to/YourFontFile.ttf"), 14);
         stage.setScene(new Scene(root));
         stage.show();
