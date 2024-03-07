@@ -1,0 +1,23 @@
+.check-box{
+    -fx-background-color: rgba(0,0,0,0);
+}
+.check-box > .box {
+    -fx-padding: 8px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10px; /* Adjust the radius for rounded corners */
+    -fx-background-color: #ffffff; /* Background color */
+    -fx-border-color: #727374; /* Border color */
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.check-box > .box > .mark {
+    -fx-padding: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-width: 2px;
+}
+
+/* styles.css */
+
+/* Custom checkbox with rounded corners */
+
