@@ -1,0 +1,21 @@
+.filed{
+    -fx-min-width: 584px;
+    -fx-min-height: 56px;
+    -fx-padding: 16px;
+    -fx-font-size: 16px;
+    -fx-font-family: Inter;
+    -fx-font-weight: 400;
+    -fx-font-style: normal;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #DCD9D9;
+
+}
+
+.text_New_Account{
+    -fx-font-size: 16px;
+    -fx-font-family: Inter;
+    -fx-font-weight: 400;
+    -fx-underline: true;
+    -fx-fill: #fff;
+}

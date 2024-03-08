@@ -1,0 +1,17 @@
+.addBtn{
+    -fx-min-height: 0px;
+    -fx-min-width: 0px;
+    -fx-background-image: url('../AddBtn.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+}
+
+.getButton{
+    -fx-min-height: 0px;
+    -fx-min-width: 0px;
+    -fx-background-image: url('../GetBtn.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+}

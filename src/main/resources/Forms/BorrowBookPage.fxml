@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1084.0" prefWidth="1611.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.BorrowBookPageFormController">
+   <children>
+      <ImageView fitHeight="1084.0" fitWidth="1613.0" layoutX="280.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../img/GetBook.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="162.0" layoutY="502.0" prefHeight="437.0" prefWidth="1295.0" stylesheets="@../img/Styles/TableCss.css">
+        <columns>
+          <TableColumn prefWidth="243.0" />
+          <TableColumn prefWidth="761.0" text="Book Title" />
+            <TableColumn prefWidth="289.0" />
+        </columns>
+      </TableView>
+      <TextField layoutX="165.0" layoutY="149.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <TextField layoutX="935.0" layoutY="149.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <TextField layoutX="936.0" layoutY="315.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <TextField layoutX="166.0" layoutY="315.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <Button layoutX="1255.0" layoutY="410.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="183.0" styleClass="addBtn" stylesheets="@../img/Styles/BorrowBookPage.css" />
+      <Button layoutX="1273.0" layoutY="961.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="192.0" styleClass="getButton" stylesheets="@../img/Styles/BorrowBookPage.css" />
+   </children>
+</AnchorPane>

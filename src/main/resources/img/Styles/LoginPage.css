@@ -1,0 +1,78 @@
+.background{
+    -fx-background-color: #7B13FF;
+}
+
+.text-field{
+    -fx-display: flex;
+    -fx-min-width: 589px;
+    -fx-min-height: 73px;
+    -fx-padding: 16px;
+    -fx-font-size: 18px;
+    -fx-text-fill: #4D4D4D;
+    -fx-spacing: 8px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-font-weight: 700;
+    -fx-border-color: #DCD9D9;
+    -fx-background-color: #FFF;
+    -fx-font-family: 'Inter';
+}
+
+.eye{
+    -fx-background-image: url('../off.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+}
+
+.check-box{
+    -fx-text-fill: #fff;
+    -fx-fill: #FFF;
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+}
+
+.forget{
+    -fx-text-fill: #fff;
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-fill: #fff;
+    -fx-underline: true;
+}
+
+.buttonLogin{
+    -fx-border-radius: 8px;
+    -fx-background-color: #E9FF65;
+    -fx-display: flex;
+    -fx-min-width: 492px;
+    -fx-min-height: 61px;
+    -fx-padding: 16px;
+    -fx-justify-content: center;
+    -fx-alignment: center;
+    -fx-flex-shrink: 0;
+    -fx-font-family: Inter;
+    -fx-font-weight: 600;
+    -fx-font-size: 20px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 0, 0), dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 0);
+    -fx-text-fill: #ffffff;
+}
+
+.text_New_Account{
+    -fx-font-size: 16px;
+    -fx-font-family: Inter;
+    -fx-font-weight: 400;
+    -fx-underline: true;
+    -fx-fill: #fff;
+}
+
+.text_New_Account:hover{
+    -fx-fill: #356bff;
+}
+
+.forget:hover{
+    -fx-fill: #356bff;
+}

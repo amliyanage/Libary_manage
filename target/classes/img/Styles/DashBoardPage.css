@@ -1,0 +1,147 @@
+.Dash_icon{
+    -fx-background-image: url('../t.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.Dash_icon:hover{
+    -fx-background-image: url('../icon/hover/dashboardhover.png');
+}
+
+.book_View{
+    -fx-background-image: url('../icon/BookViewIcon.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.book_View:hover{
+    -fx-background-image: url('../icon/hover/searchbook.png');
+}
+
+.book_borrow{
+    -fx-background-image: url('../icon/BookBorrowIcon.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.book_borrow:hover{
+    -fx-background-image: url('../icon/hover/borrwoBook.png');
+}
+
+.book_return{
+    -fx-background-image: url('../icon/BookReturnIcon.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.book_return:hover{
+    -fx-background-image: url('../icon/hover/retrunBook.png');
+}
+
+.Log_Out{
+    -fx-background-image: url('../icon/LoginOutICon.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.Log_Out:hover{
+    -fx-background-image: url('../icon/hover/exit.png');
+}
+
+.branch{
+    -fx-background-image: url('../icon/branch.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.branch:hover{
+    -fx-background-image: url('../icon/hover/branch.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.user{
+    -fx-background-image: url('../icon/admin.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.user:hover{
+    -fx-background-image: url('../icon/hover/member.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+    -fx-min-height: 77px;
+    -fx-min-width: 77px;
+}
+
+.background{
+    -fx-background-color: #fff;
+}
+
+.text{
+    -fx-font-family: Inter;
+    -fx-font-weight: 400;
+    -fx-font-size: 63px;
+}
+
+.text-field{
+    -fx-min-width: 432px;
+    -fx-max-width: 432px;
+    -fx-min-height: 48px;
+    -fx-max-height: 48px;
+    -fx-background-color: #FFF;
+    -fx-text-fill: #4D4D4D;
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: 24px;
+    -fx-padding: 10px;
+    -fx-background-radius: 8px;
+}
+
+.eye{
+    -fx-min-height: 0px;
+    -fx-min-width: 0px;
+    -fx-background-image: url('../off.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-z-index: 1000;
+}
+
+.ChangePass{
+    -fx-min-width: 253px;
+    -fx-max-width: 253px;
+    -fx-min-height: 53px;
+    -fx-max-height: 53px;
+    -fx-background-color: #FFF48F;
+    -fx-background-radius: 8px;
+    -fx-font-size: 18px;
+    -fx-font-weight: 400;
+    -fx-text-fill: #000;
+}
