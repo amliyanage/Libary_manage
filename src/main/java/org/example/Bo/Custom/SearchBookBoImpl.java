@@ -1,7 +1,6 @@
 package org.example.Bo.Custom;
 
-import org.controlsfx.control.textfield.AutoCompletionBinding;
-import org.example.Bo.BoFactor;
+
 import org.example.Bo.SearchBookBo;
 import org.example.Dao.BookDao;
 import org.example.Dao.Custom.BookDaoImpl;

@@ -11,7 +11,7 @@ public class DaoFactory {
     }
 
     public enum DaoType{
-        Member ,admin
+        Member ,admin, Books
     }
 
     public SuperDao getDao( DaoType daoType ){
@@ -21,7 +21,8 @@ public class DaoFactory {
 
             case admin:
                 return new AdminDaoImpl();
-
+            case Books:
+                return new BookDaoImpl();
             default:
                 return null;
         }

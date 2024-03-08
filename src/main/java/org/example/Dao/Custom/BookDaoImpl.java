@@ -26,9 +26,10 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<String> getOneData() {
-        String sql = "SELECT B.title FROM Books As B";
+        String sql = "SELECT B.title FROM Books AS B";
         Query query = session.createQuery(sql);
         List<String> titles = query.getResultList();
         return titles;
     }
+
 }
