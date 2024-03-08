@@ -32,4 +32,9 @@ public class BookDaoImpl implements BookDao {
         return titles;
     }
 
+    @Override
+    public int saved(Books data) {
+        return -1;
+    }
+
 }

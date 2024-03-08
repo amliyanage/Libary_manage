@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Member")
@@ -17,16 +18,16 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "Member_Id" )
-    private int Id;
+    @Column(name = "Member_Id")
+    private int id;
 
-    @Column( name = "Username" )
-    private String Username;
+    @Column(name = "Username")
+    private String username;
 
-    @Column( name = "Password" )
-    private String Password;
+    @Column(name = "Password")
+    private String password;
 
-    @Column( name = "Email" )
-    private String Email;
-
+    @Column(name = "Email")
+    private String email;
 }
+

@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="background" stylesheets="@../../img/Styles/DashBoardPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.MainDashboardPageFormController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="background" stylesheets="@../../img/Styles/DashBoardPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.AdminController.MainDashboardFormController">
    <children>
       <ImageView fitHeight="1075.0" fitWidth="423.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -13,10 +13,11 @@
          </image>
       </ImageView>
       <Button layoutX="102.0" layoutY="223.0" mnemonicParsing="false" onAction="#DashboardbtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="Dash_icon" />
-      <Button layoutX="102.0" layoutY="369.0" mnemonicParsing="false" onAction="#SearchBookOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="book_View" />
-      <Button layoutX="103.0" layoutY="514.0" minWidth="68.0" mnemonicParsing="false" onAction="#BookBorrowBtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="book_borrow" />
-      <Button layoutX="103.0" layoutY="661.0" minWidth="72.0" mnemonicParsing="false" onAction="#ReturnBookBtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="book_return" />
-      <Button layoutX="102.0" layoutY="810.0" minWidth="74.0" mnemonicParsing="false" onAction="#ExitBtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="Log_Out" />
+      <Button layoutX="102.0" layoutY="349.0" mnemonicParsing="false" onAction="#ManageBookOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="book_View" />
+      <Button layoutX="103.0" layoutY="474.0" minWidth="68.0" mnemonicParsing="false" onAction="#ManageBranchOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="branch" />
+      <Button layoutX="103.0" layoutY="601.0" minWidth="72.0" mnemonicParsing="false" onAction="#ReturnBookBtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="book_return" />
+      <Button layoutX="102.0" layoutY="865.0" minWidth="74.0" mnemonicParsing="false" onAction="#ExitBtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="Log_Out" />
       <AnchorPane fx:id="ChangePane" layoutX="286.0" layoutY="2.0" prefHeight="1082.0" prefWidth="1611.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button layoutX="101.0" layoutY="731.0" minWidth="72.0" mnemonicParsing="false" onAction="#UserbtnOnActhion" prefHeight="77.0" prefWidth="77.0" styleClass="user" />
    </children>
 </AnchorPane>

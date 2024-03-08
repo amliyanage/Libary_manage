@@ -19,4 +19,9 @@ public class AdminDaoImpl implements AdminDao {
     public List<String> getOneData() {
         return null;
     }
+
+    @Override
+    public int saved(Admin data) {
+        return -1;
+    }
 }

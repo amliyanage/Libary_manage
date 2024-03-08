@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table( name = "Book")
+@Table(name = "Book")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -16,22 +17,23 @@ import javax.persistence.*;
 public class Books {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
-    @Column( name = "Book_Id")
-    private int Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Book_Id")
+    private int id;
 
-    @Column( name = "Title" )
+    @Column(name = "Title")
     private String title;
 
-    @Column( name = "Autor" )
-    private String Autor;
+    @Column(name = "Autor")
+    private String autor;
 
-    @Column( name = "Dis" )
+    @Column(name = "Dis")
     private String dis;
 
-    @Column( name = "Genre" )
+    @Column(name = "Genre")
     private String genre;
 
-    @Column( name = "Available")
+    @Column(name = "Available")
     private String available;
+
 }

@@ -2,6 +2,7 @@ package org.example.Bo;
 
 import org.example.Bo.Custom.AdminBoImpl;
 import org.example.Bo.Custom.MemberBoImpl;
+import org.example.Bo.Custom.RegisterBoImpl;
 import org.example.Bo.Custom.SearchBookBoImpl;
 
 public class BoFactor {
@@ -16,7 +17,7 @@ public class BoFactor {
     }
 
     public enum BoType{
-        Member,Admin,Search_Book
+        Member,Admin,Search_Book,Register
     }
 
     public SuperBo getBo(BoType boType){
@@ -27,6 +28,8 @@ public class BoFactor {
                 return new AdminBoImpl();
             case Search_Book:
                 return new SearchBookBoImpl();
+            case Register:
+                return new RegisterBoImpl();
             default:
                 return null;
         }
