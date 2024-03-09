@@ -24,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class RegisterPageFormController implements Initializable {
 
+    public TextField NameText;
     @FXML
     private PasswordField PasswordConfirm;
 
@@ -109,23 +110,27 @@ public class RegisterPageFormController implements Initializable {
     }
 
     public void RegisterbtnOnActhion(ActionEvent actionEvent) {
-        Parent parent = null;
-        try {
-            Register();
-            parent = FXMLLoader.load(getClass().getResource("/Forms/LoginPage.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Stage stage = (Stage) PasswordConfirm.getScene().getWindow();
-        stage.setScene(new Scene(parent));
-        stage.show();
+        Register();
     }
 
     private void Register() {
-        int register = registerBo.Register(new MemberDto(1, usernameText.getText(), PasswordFild.getText(), emailText.getText()));
+        int register = registerBo.Register(new MemberDto(1,NameText.getText(), usernameText.getText(), PasswordFild.getText(), emailText.getText()));
 
         if (register != -1){
+
             new Alert(Alert.AlertType.INFORMATION,"User Id is : M0"+register).show();
+
+            Parent parent = null;
+
+            try {
+                parent = FXMLLoader.load(getClass().getResource("/Forms/LoginPage.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            Stage stage = (Stage) PasswordConfirm.getScene().getWindow();
+            stage.setScene(new Scene(parent));
+            stage.show();
         }
         else {
             new Alert(Alert.AlertType.INFORMATION,"Not Complete").show();

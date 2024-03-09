@@ -12,7 +12,7 @@ public class RegisterBoImpl implements RegisterBo {
     MemberDao memberDao = (MemberDao) DaoFactory.getDaoFactory().getDao(DaoFactory.DaoType.Member);
     @Override
     public int Register(MemberDto member) {
-        int saved = memberDao.saved(new Member(member.getId(),member.getName(),member.getPassword(),member.getEmail()));
+        int saved = memberDao.saved(new Member(member.getId(),member.getFull_name(),member.getUsername(),member.getPassword(),member.getEmail()));
         return saved;
     }
 }
