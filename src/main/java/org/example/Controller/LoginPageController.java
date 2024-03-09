@@ -1,6 +1,6 @@
 package org.example.Controller;
 
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import org.example.Bo.BoFactor;
 import org.example.Bo.MemberBo;
 import org.example.Bo.AdminBo;
@@ -10,9 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.example.unill.getIdNumber;
@@ -28,6 +25,8 @@ public class LoginPageController implements Initializable {
     public TextField PasswordTextFild;
     public Button viewPass;
     public TextField Username;
+    public CheckBox MemberCheckBox;
+    public CheckBox AdminCheckBox;
 
     Boolean flag = false;
 
@@ -60,69 +59,13 @@ public class LoginPageController implements Initializable {
     }
 
     public void LoginOnActhion(ActionEvent actionEvent) {
-
-        if( Pattern.matches( "^M.*",Username.getText() ) ){
-
-            boolean logined = memberBo.Login( getIdNumber.getIdNumber( "M", Username.getText() ), PasswordFild.getText() );
-
-            if ( logined ){
-
-                try {
-
-                    Parent parent = FXMLLoader.load( getClass().getResource( "/Forms/MainDashboardPage.fxml" ) );
-                    Stage stage = (Stage) PasswordFild.getScene().getWindow();
-                    stage.setScene(new Scene(parent));
-                    stage.show();
-
-                } catch (IOException e) {
-
-                    new Alert(Alert.AlertType.INFORMATION,"Wrong Data Input").show();
-
-                }
-
-            }
-
-            else {
-
-                new Alert( Alert.AlertType.INFORMATION,"Wrong Data Input" ).show();
-
-            }
-
+        if (MemberCheckBox.isSelected()){
+            Member_login();
+        } else if (AdminCheckBox.isSelected()) {
+            Admin_Login();
         }
-
-        else if( Pattern.matches( "^A.*", Username.getText() ) ){
-
-            boolean logined = adminBo.getData(getIdNumber.getIdNumber("A",Username.getText()),PasswordFild.getText());
-
-            if (logined){
-
-                try {
-
-                    Parent parent = FXMLLoader.load( getClass().getResource( "/Forms/Admin/MainDashboardPage.fxml" ) );
-                    Stage stage = (Stage) PasswordFild.getScene().getWindow();
-                    stage.setScene(new Scene(parent));
-                    stage.show();
-
-                } catch (IOException e) {
-
-                    new Alert(Alert.AlertType.INFORMATION,"Wrong Data Input").show();
-
-                }
-
-            }
-
-            else {
-
-                new Alert( Alert.AlertType.INFORMATION,"Wrong Data Input" ).show();
-
-            }
-
-        }
-
         else {
-
-            new Alert( Alert.AlertType.INFORMATION,"Wrong Data Input" ).show();
-
+            new Alert(Alert.AlertType.INFORMATION,"Please select Member or Admin").show();
         }
     }
 
@@ -136,4 +79,43 @@ public class LoginPageController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+
+    void Member_login(){
+        boolean logined = memberBo.Login(Username.getText(), PasswordFild.getText());
+
+        if (logined){
+            Parent parent = null;
+            try {
+                parent = FXMLLoader.load( getClass().getResource( "/Forms/MainDashboardPage.fxml" ) );
+                Stage stage = (Stage) PasswordFild.getScene().getWindow();
+                stage.setScene(new Scene(parent));
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.INFORMATION,"Worng Data has been input").show();
+        }
+    }
+
+    void Admin_Login(){
+        boolean logined = adminBo.getData(Username.getText(), PasswordFild.getText());
+        if (logined){
+            Parent parent = null;
+            try {
+                parent = FXMLLoader.load( getClass().getResource( "/Forms/Admin/MainDashboardPage.fxml" ) );
+                Stage stage = (Stage) PasswordFild.getScene().getWindow();
+                stage.setScene(new Scene(parent));
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.INFORMATION,"Worng Data has been input").show();
+        }
+    }
+
 }

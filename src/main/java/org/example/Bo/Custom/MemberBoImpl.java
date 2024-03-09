@@ -9,17 +9,13 @@ public class MemberBoImpl implements MemberBo {
 
     MemberDao memberDao = (MemberDao) DaoFactory.getDaoFactory().getDao( DaoFactory.DaoType.Member );
     @Override
-    public boolean Login(int Username, String Password) {
-        try {
-            Member allData = memberDao.getData(Username);
+    public boolean Login(String Username, String Password) {
+        Member data = memberDao.getData(Username);
 
-            if (allData !=null || Password.equals(allData.getPassword())){
-                return true;
-            }
-            else {
-                return false;
-            }
-        } catch (Exception e) {
+        if (data != null && data.getPassword().equals(Password)){
+            return true;
+        }
+        else {
             return false;
         }
     }

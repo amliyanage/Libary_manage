@@ -19,10 +19,6 @@ public class BookDaoImpl implements BookDao {
         return (Books) query.getSingleResult();
     }
 
-    @Override
-    public Books getData(int Id) {
-        return null;
-    }
 
     @Override
     public List<String> getOneData() {

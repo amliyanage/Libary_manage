@@ -5,6 +5,7 @@ import org.example.Entity.Member;
 import org.example.unill.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -14,8 +15,11 @@ public class MemberDaoImpl implements MemberDao {
     Transaction transaction = session.beginTransaction();
 
     @Override
-    public Member getData ( int Id ) {
-        return session.get(Member.class, Id);
+    public Member getData ( String Id ) {
+        String hql = "FROM Member WHERE username = :username";
+        Query<Member> query = session.createQuery(hql, Member.class);
+        query.setParameter("username", Id);
+        return query.uniqueResult();
     }
 
     @Override

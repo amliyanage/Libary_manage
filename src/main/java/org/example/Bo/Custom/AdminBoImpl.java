@@ -9,18 +9,13 @@ public class AdminBoImpl implements AdminBo {
 
     AdminDao adminDao = (AdminDao) DaoFactory.getDaoFactory().getDao( DaoFactory.DaoType.admin );
     @Override
-    public boolean getData(int Id, String Password) {
-        try {
+    public boolean getData(String Id, String Password) {
+        Admin data = adminDao.getData(Id);
 
-            Admin data = adminDao.getData(Id);
-
-            if (data !=null || Password.equals(data.getPassword())){
-                return true;
-            }
-            else {
-                return false;
-            }
-        } catch (Exception e) {
+        if (data != null && Password.equals(data.getPassword())){
+            return true;
+        }
+        else {
             return false;
         }
     }

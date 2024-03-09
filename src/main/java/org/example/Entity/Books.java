@@ -35,5 +35,5 @@ public class Books {
 
     @Column(name = "Available")
     private String available;
-
+    
 }
