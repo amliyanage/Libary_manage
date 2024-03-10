@@ -20,6 +20,9 @@ public class Admin {
     @Column( name = "Admin_Id" )
     private int Id;
 
+    @Column( name = "Name" )
+    private String Name;
+
     @Column( name = "Username" )
     private String Username;
 

@@ -5,6 +5,7 @@ import org.example.Entity.Admin;
 import org.example.Entity.Member;
 import org.example.unill.SessionFactoryConfiguration;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -28,12 +29,18 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public int saved(Admin data) {
-        return -1;
+        Transaction transaction = session.beginTransaction();
+        int value = (int) session.save(data);
+        transaction.commit();
+        return value;
     }
 
     @Override
     public ArrayList<Admin> getAll() {
-        return null;
+        String sqlQuery = "FROM Admin";
+        Query query = session.createQuery(sqlQuery);
+        List list = query.list();
+        return (ArrayList<Admin>) list;
     }
 
     @Override

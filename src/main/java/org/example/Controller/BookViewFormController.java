@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
 import org.example.Bo.BoFactor;
 import org.example.Bo.SearchBookBo;
 import org.example.Dao.Custom.DaoFactory;
@@ -64,16 +66,16 @@ public class BookViewFormController implements Initializable {
 
     }
 
-//    private AutoCompletionBinding<String> Autotitle;
-//
-//    private List<String> titles = searchBookBo.getTitles();
-//
-//    private Set<String> titleSet = new HashSet<>(titles);
+    private AutoCompletionBinding<String> Autotitle;
+
+    private List<String> titles = searchBookBo.getTitles();
+
+    private Set<String> titleSet = new HashSet<>(titles);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-//        Autotitle = TextFields.bindAutoCompletion(searchBar,titleSet);
+        Autotitle = TextFields.bindAutoCompletion(searchBar,titleSet);
 
     }
 }

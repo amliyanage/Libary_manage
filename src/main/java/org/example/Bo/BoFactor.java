@@ -14,7 +14,7 @@ public class BoFactor {
     }
 
     public enum BoType{
-        Member,Admin,Search_Book,Register,Manage_Book
+        Member,Admin,Search_Book,Register,Manage_Book,UserMange
     }
 
     public SuperBo getBo(BoType boType){
@@ -29,6 +29,8 @@ public class BoFactor {
                 return new RegisterBoImpl();
             case Manage_Book:
                 return new ManageBookBoImpl();
+            case UserMange:
+                return new UserManageBImpl();
             default:
                 return null;
         }
