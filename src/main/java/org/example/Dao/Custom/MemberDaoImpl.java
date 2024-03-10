@@ -37,7 +37,10 @@ public class MemberDaoImpl implements MemberDao {
 
     @Override
     public ArrayList<Member> getAll() {
-        return null;
+        String sqlQuery = "FROM Member";
+        Query query = session.createQuery(sqlQuery);
+        List list = query.list();
+        return (ArrayList<Member>) list;
     }
 
     @Override
@@ -47,6 +50,8 @@ public class MemberDaoImpl implements MemberDao {
 
     @Override
     public void Delete(int Id) {
-
+        Member member = session.get(Member.class, Id);
+        session.delete(member);
+        transaction.commit();
     }
 }

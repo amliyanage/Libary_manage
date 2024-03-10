@@ -100,11 +100,14 @@ public class LoginPageController implements Initializable {
         }
     }
 
+    public static String Admin_Username = "";
+
     void Admin_Login(){
         boolean logined = adminBo.getData(Username.getText(), PasswordFild.getText());
         if (logined){
             Parent parent = null;
             try {
+                Admin_Username = Username.getText();
                 parent = FXMLLoader.load( getClass().getResource( "/Forms/Admin/MainDashboardPage.fxml" ) );
                 Stage stage = (Stage) PasswordFild.getScene().getWindow();
                 stage.setScene(new Scene(parent));

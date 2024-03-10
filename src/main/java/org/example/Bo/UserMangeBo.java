@@ -1,11 +1,14 @@
 package org.example.Bo;
 
 import org.example.Dto.AdminDto;
+import org.example.Dto.MemberDto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface UserMangeBo extends SuperBo{
-    ArrayList<AdminDto> getAll();
+    ArrayList<MemberDto> getAll();
 
-    int save(AdminDto admin);
+    void delete(int Id);
+
 }

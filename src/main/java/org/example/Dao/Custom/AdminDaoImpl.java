@@ -1,5 +1,6 @@
 package org.example.Dao.Custom;
 
+import org.example.Controller.LoginPageController;
 import org.example.Dao.AdminDao;
 import org.example.Entity.Admin;
 import org.example.Entity.Member;
@@ -8,19 +9,27 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import javax.persistence.OptimisticLockException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdminDaoImpl implements AdminDao {
 
     Session session = SessionFactoryConfiguration.getInstance().getSession();
+
     @Override
     public Admin getData(String Id) {
         String hql = "FROM Admin WHERE Username = :username";
         Query<Admin> query = session.createQuery(hql, Admin.class);
         query.setParameter("username", Id);
-        return query.uniqueResult();
+        List<Admin> results = query.getResultList();
+        if (!results.isEmpty()) {
+            return results.get(0); // Matching admin found
+        } else {
+            return null; // No matching admin found
+        }
     }
+
 
     @Override
     public List<String> getOneData() {
@@ -32,6 +41,9 @@ public class AdminDaoImpl implements AdminDao {
         Transaction transaction = session.beginTransaction();
         int value = (int) session.save(data);
         transaction.commit();
+        if (value < 0){
+             transaction.rollback();
+        }
         return value;
     }
 
@@ -43,13 +55,22 @@ public class AdminDaoImpl implements AdminDao {
         return (ArrayList<Admin>) list;
     }
 
-    @Override
-    public void Update(Admin Data) {
 
+    @Override
+    public void Update(Admin Data) throws OptimisticLockException {
+        Transaction transaction = session.beginTransaction();
+        session.merge(Data);
+        transaction.commit();
     }
+
 
     @Override
     public void Delete(int Id) {
 
+    }
+
+    @Override
+    public Admin getData() {
+        return null;
     }
 }

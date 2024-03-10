@@ -23,12 +23,12 @@ public class SaveUserFormController {
     UserMangeBo userMangeBo = (UserMangeBo) org.example.Bo.BoFactor.getBoFactory().getBo(org.example.Bo.BoFactor.BoType.UserMange);
     @FXML
     void saveBtnOnActhion(ActionEvent event) {
-      int id = userMangeBo.save(new AdminDto(0, name.getText(), username.getText(), password.getText(), email.getText()));
-
-      if(id > 0){
-          new Alert(Alert.AlertType.CONFIRMATION, "User Save").show();
-        }else {
-          new Alert(Alert.AlertType.ERROR, "User Save Fail").show();
-      }
+//      int id = userMangeBo.save(new AdminDto(0, name.getText(), username.getText(), password.getText(), email.getText()));
+//
+//      if(id > 0){
+//          new Alert(Alert.AlertType.CONFIRMATION, "User Save").show();
+//        }else {
+//          new Alert(Alert.AlertType.ERROR, "User Save Fail").show();
+//      }
     }
 }
