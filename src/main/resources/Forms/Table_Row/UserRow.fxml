@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="70.0" prefWidth="1551.0" styleClass="back" stylesheets="@../../img/Styles/TableRow.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.UserRowFromController">
+   <children>
+      <Label fx:id="UserId" layoutX="81.0" layoutY="23.0" prefHeight="25.0" prefWidth="224.0" text="Label" />
+      <Label fx:id="name" layoutX="358.0" layoutY="23.0" prefHeight="25.0" prefWidth="331.0" text="Label" />
+      <Label fx:id="Username" layoutX="729.0" layoutY="23.0" prefHeight="25.0" prefWidth="395.0" text="Label" />
+      <Label fx:id="Password" layoutX="1149.0" layoutY="23.0" prefHeight="25.0" prefWidth="395.0" text="Label" />
+   </children>
+</AnchorPane>
