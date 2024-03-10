@@ -4,10 +4,10 @@ import org.example.Bo.ManageBookBo;
 import org.example.Dao.BookDao;
 import org.example.Dao.Custom.DaoFactory;
 import org.example.Dto.BookDto;
-import org.example.Dto.MemberDto;
 import org.example.Entity.Books;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ManageBookBoImpl implements ManageBookBo {
 
@@ -39,6 +39,17 @@ public class ManageBookBoImpl implements ManageBookBo {
     public int Save(BookDto yes) {
         int saved = bookDao.saved(new Books(yes.getId(), yes.getTitle(), yes.getAutor(), yes.getDis(), yes.getGenre(), yes.getAvailable()));
         return saved;
+    }
+
+    @Override
+    public BookDto search(String text) {
+        Books data = bookDao.getData(text);
+        return new BookDto(data.getId(), data.getTitle(), data.getAutor(), data.getDis(), data.getGenre(), data.getAvailable());
+    }
+
+    @Override
+    public List<String> getTitles() {
+        return bookDao.getOneData();
     }
 
 }
