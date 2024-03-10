@@ -1,0 +1,8 @@
+.label{
+    -fx-background-color: #FFFFFF;
+    -fx-font-family: Inter;
+    -fx-font-size: 20px;
+    -fx-font-style: normal;
+    -fx-spacing: 2px;
+    -fx-font-weight: 500;
+}

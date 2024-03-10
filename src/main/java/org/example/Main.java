@@ -14,8 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Forms/LoginPage.fxml"));
-        Font.loadFont(getClass().getResourceAsStream("/path/to/YourFontFile.ttf"), 14);
+        Parent root = FXMLLoader.load(getClass().getResource("/Forms/Admin/MainDashboardPage.fxml"));
         stage.setScene(new Scene(root));
         stage.show();
     }

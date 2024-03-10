@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="686.0" prefWidth="600.0" stylesheets="@../../../img/Styles/View.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.View.ViewBookFormController">
+   <children>
+      <ImageView fitHeight="686.0" fitWidth="600.0" layoutX="100.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../img/Table_Load/viewBook.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Book_Id" layoutX="20.0" layoutY="201.0" prefHeight="25.0" prefWidth="268.0" text="Label" />
+      <Label fx:id="available" layoutX="321.0" layoutY="201.0" prefHeight="25.0" prefWidth="268.0" text="Label" />
+      <Label fx:id="title" layoutX="21.0" layoutY="327.0" prefHeight="25.0" prefWidth="519.0" text="Label" />
+      <Label fx:id="author" layoutX="21.0" layoutY="458.0" prefHeight="25.0" prefWidth="519.0" text="Label" />
+      <Label fx:id="genre" layoutX="21.0" layoutY="599.0" prefHeight="25.0" prefWidth="519.0" text="Label" />
+      <Label layoutX="534.0" layoutY="27.0" prefHeight="53.0" prefWidth="52.0" />
+   </children>
+</AnchorPane>

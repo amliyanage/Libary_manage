@@ -103,12 +103,6 @@
     -fx-background-color: #fff;
 }
 
-.text{
-    -fx-font-family: Inter;
-    -fx-font-weight: 400;
-    -fx-font-size: 63px;
-}
-
 .text-field{
     -fx-min-width: 432px;
     -fx-max-width: 432px;
@@ -116,7 +110,6 @@
     -fx-max-height: 48px;
     -fx-background-color: #FFF;
     -fx-text-fill: #4D4D4D;
-    -fx-font-family: "Inter";
     -fx-font-size: 14px;
     -fx-font-style: normal;
     -fx-font-weight: 400;

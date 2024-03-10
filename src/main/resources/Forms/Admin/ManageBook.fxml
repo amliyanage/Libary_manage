@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="1082.0" prefWidth="1611.0" stylesheets="@../../img/Styles/AdminDashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.AdminController.ManageBookFormController">
    <children>
       <ImageView fitHeight="1081.0" fitWidth="1610.0" layoutX="39.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -17,14 +16,14 @@
             <Image url="@../../img/manageBook.png" />
          </image>
       </ImageView>
-      <CheckBox fx:id="CheckBox" layoutX="45.0" layoutY="212.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="17.0" stylesheets="@../../img/Styles/CheckBox.css" />
+      <CheckBox fx:id="CheckBox" layoutX="45.0" layoutY="235.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="17.0" stylesheets="@../../img/Styles/CheckBox.css" />
       <Button layoutX="1178.0" layoutY="136.0" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="156.0" text="asass" />
       <Button layoutX="1378.0" layoutY="136.0" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="145.0" text="asass" />
       <ScrollPane layoutX="30.0" layoutY="285.0" prefHeight="713.0" prefWidth="1559.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="707.0" prefWidth="1543.0">
                <children>
-                  <VBox layoutY="47.0" prefHeight="708.0" prefWidth="1544.0" style="-fx-background-color: #FFF;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <VBox fx:id="tableLoad" layoutY="47.0" prefHeight="708.0" prefWidth="1544.0" style="-fx-background-color: #FFF;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
         </content>

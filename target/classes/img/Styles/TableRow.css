@@ -1,0 +1,35 @@
+.label{
+    -fx-background-color: #fff;
+    -fx-font-family: Inter;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+}
+.back{
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: black;
+    -fx-background-color: #FFF;
+}
+
+.view-btn{
+    -fx-min-height: 30px;
+    -fx-min-width: 30px;
+    -fx-background-image: url('../Table_Load/viewbtn.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.edit-btn{
+    -fx-min-height: 30px;
+    -fx-min-width: 30px;
+    -fx-background-image: url('../Table_Load/editbtn.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.delete_btn{
+    -fx-min-height: 30px;
+    -fx-min-width: 30px;
+    -fx-background-image: url('../Table_Load/Delete-Btn.png');
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0,0,0,0);
+}

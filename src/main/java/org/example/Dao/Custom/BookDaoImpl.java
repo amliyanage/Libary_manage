@@ -5,7 +5,9 @@ import org.example.Entity.Books;
 import org.example.unill.SessionFactoryConfiguration;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookDaoImpl implements BookDao {
@@ -31,6 +33,29 @@ public class BookDaoImpl implements BookDao {
     @Override
     public int saved(Books data) {
         return -1;
+    }
+
+    @Override
+    public ArrayList<Books> getAll() {
+        String sql = "SELECT B FROM Books AS B";
+        Query query = session.createQuery(sql);
+        List list = query.list();
+        return (ArrayList<Books>) list;
+    }
+
+    @Override
+    public void Update(Books Data) {
+        Transaction transaction = session.beginTransaction();
+        session.update(Data);
+        transaction.commit();
+    }
+
+    @Override
+    public void Delete(int Id) {
+        Transaction transaction = session.beginTransaction();
+        Books books = session.get(Books.class, Id);
+        session.delete(books);
+        transaction.commit();
     }
 
 }

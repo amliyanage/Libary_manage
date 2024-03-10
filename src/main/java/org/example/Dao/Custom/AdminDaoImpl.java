@@ -7,6 +7,7 @@ import org.example.unill.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminDaoImpl implements AdminDao {
@@ -28,5 +29,20 @@ public class AdminDaoImpl implements AdminDao {
     @Override
     public int saved(Admin data) {
         return -1;
+    }
+
+    @Override
+    public ArrayList<Admin> getAll() {
+        return null;
+    }
+
+    @Override
+    public void Update(Admin Data) {
+
+    }
+
+    @Override
+    public void Delete(int Id) {
+
     }
 }

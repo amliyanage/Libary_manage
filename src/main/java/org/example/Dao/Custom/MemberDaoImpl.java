@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDaoImpl implements MemberDao {
@@ -32,5 +33,20 @@ public class MemberDaoImpl implements MemberDao {
         int value = (int) session.save(data);
         transaction.commit();
         return value;
+    }
+
+    @Override
+    public ArrayList<Member> getAll() {
+        return null;
+    }
+
+    @Override
+    public void Update(Member Data) {
+
+    }
+
+    @Override
+    public void Delete(int Id) {
+
     }
 }
