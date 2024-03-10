@@ -5,14 +5,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.Bo.BoFactor;
 import org.example.Bo.Custom.AdminBoImpl;
+import org.example.Bo.DashboardBo;
 import org.example.Controller.Table_Row.Update.UpdateUserFormController;
 import org.example.Dto.AdminDto;
 
 public class DashboardFormController {
+    public Label BookCount;
+    public Label BranchCount;
+    public Label PaymentCount;
+    public Label MemberCount;
     @FXML
     private PasswordField PasswordFild;
 
@@ -32,12 +39,21 @@ public class DashboardFormController {
 
     AdminDto adminDto = AdminBoImpl.data;
 
+    DashboardBo dashboardBo = (DashboardBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.DashBoard);
+
     public void initialize() {
         PasswordTextFild.setVisible(false);
         Username.setText(adminDto.getUsername());
         email.setText(adminDto.getEmail());
         PasswordFild.setText(adminDto.getPassword());
         PasswordTextFild.setText(adminDto.getPassword());
+        setData();
+    }
+
+    void setData(){
+        BookCount.setText(String.valueOf(dashboardBo.BookCount()));
+        BranchCount.setText(String.valueOf(dashboardBo.BranchCount()));
+        MemberCount.setText(String.valueOf(dashboardBo.MemberCount()));
     }
 
     @FXML

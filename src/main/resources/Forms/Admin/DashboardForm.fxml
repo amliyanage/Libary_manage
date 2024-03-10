@@ -17,22 +17,22 @@
             <Image url="@../../img/dashboard.png" />
          </image>
       </ImageView>
-      <Label layoutX="140.0" layoutY="197.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+      <Label fx:id="BookCount" layoutX="140.0" layoutY="197.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
          <font>
             <Font name="Inter Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="141.0" layoutY="445.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+      <Label fx:id="BranchCount" layoutX="141.0" layoutY="445.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
          <font>
             <Font name="Inter Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="193.0" layoutY="902.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
+      <Label fx:id="PaymentCount" layoutX="193.0" layoutY="902.0" style="-fx-background-color: #FFF;" text="1000" textFill="RED">
          <font>
             <Font name="Inter Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="145.0" layoutY="681.0" style="-fx-background-color: #FFFF;" text="1000" textFill="RED">
+      <Label fx:id="MemberCount" layoutX="145.0" layoutY="681.0" style="-fx-background-color: #FFFF;" text="1000" textFill="RED">
          <font>
             <Font name="Inter Bold" size="31.0" />
          </font>

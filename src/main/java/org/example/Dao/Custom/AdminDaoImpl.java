@@ -71,6 +71,11 @@ public class AdminDaoImpl implements AdminDao {
     }
 
     @Override
+    public long Count() {
+        return 0;
+    }
+
+    @Override
     public Admin getData() {
         return null;
     }

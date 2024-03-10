@@ -16,4 +16,6 @@ public interface CrudUtil<T> extends SuperDao{
 
     void Update(T Data);
     void Delete(int Id);
+
+    long Count();
 }

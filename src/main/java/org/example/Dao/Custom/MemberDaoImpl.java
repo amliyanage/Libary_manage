@@ -54,4 +54,11 @@ public class MemberDaoImpl implements MemberDao {
         session.delete(member);
         transaction.commit();
     }
+
+    @Override
+    public long Count() {
+        String sql = "select count(*) from Member";
+        org.hibernate.Query query = session.createQuery(sql);
+        return (long) query.uniqueResult();
+    }
 }

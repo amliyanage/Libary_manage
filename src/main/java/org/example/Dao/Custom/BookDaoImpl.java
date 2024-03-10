@@ -67,4 +67,11 @@ public class BookDaoImpl implements BookDao {
         transaction.commit();
     }
 
+    @Override
+    public long Count() {
+        String sql = "select count(*) from Books";
+        Query query = session.createQuery(sql);
+        return (long) query.uniqueResult();
+    }
+
 }

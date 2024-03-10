@@ -54,4 +54,11 @@ public class BranchDaoImpl implements BranchDao{
         session.delete(data);
         transaction.commit();
     }
+
+    @Override
+    public long Count() {
+        String sql = "select count(*) from Branch";
+        org.hibernate.Query query = session.createQuery(sql);
+        return (long) query.uniqueResult();
+    }
 }
