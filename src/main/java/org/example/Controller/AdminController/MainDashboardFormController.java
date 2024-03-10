@@ -20,6 +20,7 @@ public class MainDashboardFormController implements Initializable {
     }
 
     public void ManageBranchOnActhion(ActionEvent actionEvent) {
+        ChangeForm.ChangePane(ChangePane,"Admin/BranchForm.fxml");
     }
 
     public void ReturnBookBtnOnActhion(ActionEvent actionEvent) {

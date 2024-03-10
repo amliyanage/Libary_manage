@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="70.0" prefWidth="1551.0" styleClass="back" stylesheets="@../../img/Styles/TableRow.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.BranchRowController">
+   <children>
+      <ImageView fitHeight="70.0" fitWidth="1551.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/Table_Load/branch.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Id" layoutX="82.0" layoutY="21.0" prefHeight="25.0" prefWidth="95.0" text="Label" />
+      <Label fx:id="name" layoutX="357.0" layoutY="20.0" prefHeight="25.0" prefWidth="332.0" text="Label" />
+      <Label fx:id="locathion" layoutX="703.0" layoutY="21.0" prefHeight="25.0" prefWidth="320.0" text="Label" />
+      <Label fx:id="email" layoutX="1082.0" layoutY="20.0" prefHeight="25.0" prefWidth="216.0" text="Label" />
+      <Button layoutX="1396.0" layoutY="18.0" mnemonicParsing="false" onAction="#viewBtnOnActhion" styleClass="view-btn" />
+      <Button layoutX="1449.0" layoutY="18.0" mnemonicParsing="false" onAction="#editBtnOnActhion" styleClass="edit-btn" />
+      <Button layoutX="1500.0" layoutY="18.0" mnemonicParsing="false" onAction="#DeleteBtnOnActhion" styleClass="delete_btn" />
+   </children>
+</AnchorPane>

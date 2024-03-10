@@ -2,6 +2,7 @@ package org.example.unill;
 
 import org.example.Entity.Admin;
 import org.example.Entity.Books;
+import org.example.Entity.Branch;
 import org.example.Entity.Member;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,6 +18,7 @@ public class SessionFactoryConfiguration {
                 .addAnnotatedClass(Member.class)
                 .addAnnotatedClass(Admin.class)
                 .addAnnotatedClass(Books.class)
+                .addAnnotatedClass(Branch.class)
                 .buildSessionFactory();
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="686.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.View.ViewBranchFormController">
+   <children>
+      <ImageView fitHeight="686.0" fitWidth="600.0" layoutX="230.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../img/Table_Load/viewBranch.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="name" editable="false" layoutX="27.0" layoutY="320.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+      <TextField fx:id="locationtext" editable="false" layoutX="29.0" layoutY="421.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+      <TextField fx:id="email" editable="false" layoutX="29.0" layoutY="530.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+      <TextField fx:id="Branch_Id" editable="false" layoutX="29.0" layoutY="210.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+   </children>
+</AnchorPane>
