@@ -1,12 +1,15 @@
 package org.example.Controller.AdminController;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import org.example.Bo.BoFactor;
 import org.example.Bo.ManageBookBo;
@@ -50,5 +53,17 @@ public class ManageBookFormController implements Initializable {
 
         tableLoad.getChildren().clear();
         tableLoad.getChildren().add(vBox);
+    }
+
+    public void AddBtnOnActhion(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Forms/Table_Row/Save/SaveBook.fxml"));
+        Parent parent = fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.centerOnScreen();
+        stage.showAndWait();
+    }
+
+    public void searchOnActhion(ActionEvent actionEvent) {
     }
 }

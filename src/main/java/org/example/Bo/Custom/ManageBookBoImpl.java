@@ -35,4 +35,10 @@ public class ManageBookBoImpl implements ManageBookBo {
         bookDao.Delete(Id);
     }
 
+    @Override
+    public int Save(BookDto yes) {
+        int saved = bookDao.saved(new Books(yes.getId(), yes.getTitle(), yes.getAutor(), yes.getDis(), yes.getGenre(), yes.getAvailable()));
+        return saved;
+    }
+
 }

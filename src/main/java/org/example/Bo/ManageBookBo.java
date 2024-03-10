@@ -10,4 +10,6 @@ public interface ManageBookBo extends SuperBo{
     void Update(BookDto memberDto);
 
     void Delete(int Id);
+
+    int Save(BookDto yes);
 }

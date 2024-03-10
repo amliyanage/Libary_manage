@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -17,8 +18,7 @@
          </image>
       </ImageView>
       <CheckBox fx:id="CheckBox" layoutX="45.0" layoutY="235.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="17.0" stylesheets="@../../img/Styles/CheckBox.css" />
-      <Button layoutX="1178.0" layoutY="136.0" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="156.0" text="asass" />
-      <Button layoutX="1378.0" layoutY="136.0" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="145.0" text="asass" />
+      <Button layoutX="1378.0" layoutY="136.0" mnemonicParsing="false" onAction="#AddBtnOnActhion" opacity="0.0" prefHeight="57.0" prefWidth="145.0" text="asass" />
       <ScrollPane layoutX="30.0" layoutY="285.0" prefHeight="713.0" prefWidth="1559.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="707.0" prefWidth="1543.0">
@@ -28,6 +28,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <TextField layoutX="73.0" layoutY="124.0" prefHeight="43.0" prefWidth="401.0" promptText="Search Here" />
+      <TextField fx:id="search" layoutX="73.0" layoutY="124.0" onAction="#searchOnActhion" prefHeight="43.0" prefWidth="401.0" promptText="Search Here" />
+      <Label layoutX="1175.0" layoutY="137.0" prefHeight="57.0" prefWidth="163.0" style="-fx-background-color: #FFFF;" />
    </children>
 </AnchorPane>

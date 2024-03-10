@@ -32,7 +32,16 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public int saved(Books data) {
-        return -1;
+        Transaction transaction = session.beginTransaction();
+        int value = (int) session.save(data);
+        transaction.commit();
+        if (value > 0) {
+            return value;
+        }
+        else {
+            transaction.rollback();
+            return -1;
+        }
     }
 
     @Override
