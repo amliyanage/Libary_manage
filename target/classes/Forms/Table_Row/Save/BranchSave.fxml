@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="686.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.Save.SaveBranchController">
+   <children>
+      <ImageView fitHeight="686.0" fitWidth="600.0" layoutX="230.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../img/Table_Load/saveBranch.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="24.0" layoutY="557.0" mnemonicParsing="false" onAction="#saveBtnOnActhion" opacity="0.0" prefHeight="58.0" prefWidth="277.0" text="Button" />
+      <TextField fx:id="name" layoutX="24.0" layoutY="202.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+      <TextField fx:id="locationtext" layoutX="24.0" layoutY="302.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+      <TextField fx:id="email" layoutX="24.0" layoutY="412.0" prefHeight="39.0" prefWidth="521.0" styleClass="label" stylesheets="@../../../img/Styles/View.css" />
+   </children>
+</AnchorPane>

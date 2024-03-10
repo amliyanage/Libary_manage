@@ -18,5 +18,6 @@
       <TextField fx:id="email" layoutX="17.0" layoutY="371.0" prefHeight="52.0" prefWidth="516.0" styleClass="text-field1" stylesheets="@../../../img/Styles/ViewBookPage.css" />
       <TextField fx:id="password" layoutX="17.0" layoutY="481.0" prefHeight="52.0" prefWidth="516.0" styleClass="text-field1" stylesheets="@../../../img/Styles/ViewBookPage.css" />
       <Button layoutX="17.0" layoutY="596.0" mnemonicParsing="false" onAction="#updateBtnOnActhion" opacity="0.0" prefHeight="60.0" prefWidth="273.0" text="Button" />
+      <Button layoutX="317.0" layoutY="596.0" mnemonicParsing="false" onAction="#DeleteBtnOnActhion" opacity="0.0" prefHeight="60.0" prefWidth="267.0" text="Button" />
    </children>
 </AnchorPane>

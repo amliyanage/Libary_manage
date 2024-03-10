@@ -16,6 +16,7 @@ import java.util.List;
 public class AdminDaoImpl implements AdminDao {
 
     Session session = SessionFactoryConfiguration.getInstance().getSession();
+    Transaction transaction = session.beginTransaction();
 
     @Override
     public Admin getData(String Id) {
@@ -38,7 +39,6 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public int saved(Admin data) {
-        Transaction transaction = session.beginTransaction();
         int value = (int) session.save(data);
         transaction.commit();
         if (value < 0){
@@ -58,15 +58,16 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public void Update(Admin Data) throws OptimisticLockException {
-        Transaction transaction = session.beginTransaction();
-        session.merge(Data);
+        session.update(Data);
         transaction.commit();
     }
 
 
     @Override
     public void Delete(int Id) {
-
+        Admin admin = session.get(Admin.class, Id);
+        session.delete(admin);
+        transaction.commit();
     }
 
     @Override

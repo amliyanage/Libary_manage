@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1082.0" prefWidth="1611.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.AdminController.BranchFormController">
+   <children>
+      <ImageView fitHeight="1082.0" fitWidth="1611.0" layoutX="421.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../img/branch.png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="30.0" layoutY="315.0" prefHeight="711.0" prefWidth="1564.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="694.0" prefWidth="1548.0">
+               <children>
+                  <VBox fx:id="TableBox" prefHeight="736.0" prefWidth="1548.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Button layoutX="1436.0" layoutY="166.0" mnemonicParsing="false" onAction="#AddUserOnActhion" opacity="0.0" prefHeight="47.0" prefWidth="146.0" />
+   </children>
+</AnchorPane>
