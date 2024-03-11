@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import org.example.Bo.UserMangeBo;
-import org.example.Dto.AdminDto;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.UserMangeService;
 import org.example.Dto.MemberDto;
 
 public class UserRowFromController {
@@ -24,7 +24,7 @@ public class UserRowFromController {
         memberDto = userDto;
     }
 
-    UserMangeBo userMangeBo = (UserMangeBo) org.example.Bo.BoFactor.getBoFactory().getBo(org.example.Bo.BoFactor.BoType.UserMange);
+    UserMangeService userMangeBo = (UserMangeService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.UserMange);
 
     public void DeleteBtnOnActhion(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this user?", ButtonType.YES, ButtonType.NO);

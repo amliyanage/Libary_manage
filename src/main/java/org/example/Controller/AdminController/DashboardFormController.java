@@ -9,9 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.example.Bo.BoFactor;
-import org.example.Bo.Custom.AdminBoImpl;
-import org.example.Bo.DashboardBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.Custom.AdminServiceImpl;
+import org.example.Bo.DashboardService;
 import org.example.Controller.Table_Row.Update.UpdateUserFormController;
 import org.example.Dto.AdminDto;
 
@@ -37,9 +37,9 @@ public class DashboardFormController {
 
     Boolean flag = false;
 
-    AdminDto adminDto = AdminBoImpl.data;
+    AdminDto adminDto = AdminServiceImpl.data;
 
-    DashboardBo dashboardBo = (DashboardBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.DashBoard);
+    DashboardService dashboardService = (DashboardService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.DashBoard);
 
     public void initialize() {
         PasswordTextFild.setVisible(false);
@@ -51,9 +51,9 @@ public class DashboardFormController {
     }
 
     void setData(){
-        BookCount.setText(String.valueOf(dashboardBo.BookCount()));
-        BranchCount.setText(String.valueOf(dashboardBo.BranchCount()));
-        MemberCount.setText(String.valueOf(dashboardBo.MemberCount()));
+        BookCount.setText(String.valueOf(dashboardService.BookCount()));
+        BranchCount.setText(String.valueOf(dashboardService.BranchCount()));
+        MemberCount.setText(String.valueOf(dashboardService.MemberCount()));
     }
 
     @FXML

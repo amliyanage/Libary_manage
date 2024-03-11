@@ -12,10 +12,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.example.Bo.BoFactor;
-import org.example.Bo.RegisterBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.RegisterService;
 import org.example.Dto.MemberDto;
-import org.example.Entity.Member;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,7 +49,7 @@ public class RegisterPageFormController implements Initializable {
     private Button viewPass;
 
 
-    RegisterBo registerBo = (RegisterBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Register);
+    RegisterService registerService = (RegisterService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Register);
 
     Boolean flag = false;
     Boolean flag1 = false;
@@ -114,7 +113,7 @@ public class RegisterPageFormController implements Initializable {
     }
 
     private void Register() {
-        int register = registerBo.Register(new MemberDto(1,NameText.getText(), usernameText.getText(), PasswordFild.getText(), emailText.getText()));
+        int register = registerService.Register(new MemberDto(1,NameText.getText(), usernameText.getText(), PasswordFild.getText(), emailText.getText()));
 
         if (register != -1){
 

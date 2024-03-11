@@ -1,11 +1,9 @@
 package org.example.Dao;
 
-import org.example.Dto.MemberDto;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public interface CrudUtil<T> extends SuperDao{
+public interface CrudUtil<T> extends SuperRepository {
     T getData(String Id);
 
     List<String> getOneData();
@@ -16,6 +14,5 @@ public interface CrudUtil<T> extends SuperDao{
 
     void Update(T Data);
     void Delete(int Id);
-
     long Count();
 }

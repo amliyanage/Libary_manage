@@ -5,15 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import org.example.Bo.AdminBo;
-import org.example.Bo.BoFactor;
-import org.example.Bo.Custom.AdminBoImpl;
-import org.example.Bo.DashboardBo;
-import org.example.Bo.UserMangeBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.Custom.AdminServiceImpl;
+import org.example.Bo.DashboardService;
 import org.example.Dto.AdminDto;
-import org.example.Entity.Admin;
-
-import java.util.List;
 
 public class UpdateUserFormController {
     @FXML
@@ -28,9 +23,9 @@ public class UpdateUserFormController {
     @FXML
     private TextField username;
 
-    AdminDto adminDto = AdminBoImpl.data;
+    AdminDto adminDto = AdminServiceImpl.data;
 
-    DashboardBo userMangeBo = (DashboardBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.DashBoard);
+    DashboardService userMangeBo = (DashboardService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.DashBoard);
     @FXML
     void updateBtnOnActhion(ActionEvent event) {
         try {

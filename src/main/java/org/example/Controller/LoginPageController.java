@@ -1,9 +1,9 @@
 package org.example.Controller;
 
 import javafx.scene.control.*;
-import org.example.Bo.BoFactor;
-import org.example.Bo.MemberBo;
-import org.example.Bo.AdminBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.MemberService;
+import org.example.Bo.AdminService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,12 +12,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.example.unill.getIdNumber;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
 public class LoginPageController implements Initializable {
 
@@ -30,8 +28,8 @@ public class LoginPageController implements Initializable {
 
     Boolean flag = false;
 
-    MemberBo memberBo = (MemberBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Member);
-    AdminBo adminBo = (AdminBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Admin);
+    MemberService memberService = (MemberService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Member);
+    AdminService adminBo = (AdminService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Admin);
 
     @Override
     public void initialize( URL url, ResourceBundle resourceBundle ) {
@@ -82,7 +80,7 @@ public class LoginPageController implements Initializable {
 
 
     void Member_login(){
-        boolean logined = memberBo.Login(Username.getText(), PasswordFild.getText());
+        boolean logined = memberService.Login(Username.getText(), PasswordFild.getText());
 
         if (logined){
             Parent parent = null;

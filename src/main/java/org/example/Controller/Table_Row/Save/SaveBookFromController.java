@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import org.example.Bo.BoFactor;
-import org.example.Bo.ManageBookBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.ManageBookService;
 import org.example.Controller.AdminController.ManageBookFormController;
 import org.example.Dto.BookDto;
 
@@ -24,8 +24,8 @@ public class SaveBookFromController {
 
     @FXML
     void saveBtnOnActhion(ActionEvent event) {
-        ManageBookBo manageBookBo = (ManageBookBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Manage_Book);
-        int yes = manageBookBo.Save(new BookDto(0, title.getText(), autor.getText(), dis.getText(), Genre.getText(), "Yes"));
+        ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
+        int yes = manageBookService.Save(new BookDto(0, title.getText(), autor.getText(), dis.getText(), Genre.getText(), "Yes"));
         if (yes > 0){
             title.setText("");
             autor.setText("");

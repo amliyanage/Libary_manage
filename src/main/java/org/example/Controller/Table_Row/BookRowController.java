@@ -10,8 +10,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.example.Bo.BoFactor;
-import org.example.Bo.ManageBookBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.ManageBookService;
 import org.example.Controller.AdminController.ManageBookFormController;
 import org.example.Controller.Table_Row.Update.UpdateBook;
 import org.example.Controller.Table_Row.View.ViewBookFormController;
@@ -69,7 +69,7 @@ public class BookRowController {
         popupStage.showAndWait();
     }
 
-    ManageBookBo manageBookBo = (ManageBookBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Manage_Book);
+    ManageBookService manageBookBo = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
     public void DeleteBtnOnActhion(ActionEvent actionEvent) {
         manageBookBo.Delete(bookDto.getId());
         new Alert(Alert.AlertType.INFORMATION,"Deleted").show();

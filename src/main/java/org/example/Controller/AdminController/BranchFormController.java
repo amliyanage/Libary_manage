@@ -6,10 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.Bo.BoFactor;
-import org.example.Bo.BranchBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.BranchService;
 import org.example.Controller.Table_Row.BranchRowController;
-import org.example.Controller.Table_Row.Save.SaveBranchController;
 import org.example.Dto.BranchDto;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 public class BranchFormController {
     public VBox TableBox;
 
-    BranchBo branchBo = (BranchBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Branch);
+    BranchService branchBo = (BranchService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Branch);
 
     public void AddUserOnActhion(ActionEvent actionEvent) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Forms/Table_Row/Save/BranchSave.fxml"));

@@ -8,13 +8,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import javax.swing.text.Utilities;
+
 public class SessionFactoryConfiguration {
     private static SessionFactoryConfiguration sessionFactoryConfiguration;
     private final SessionFactory sessionFactory;
 
     private SessionFactoryConfiguration(){
         sessionFactory = new Configuration()
-                .configure()
+                .mergeProperties(Utility.getProperties())
                 .addAnnotatedClass(Member.class)
                 .addAnnotatedClass(Admin.class)
                 .addAnnotatedClass(Books.class)

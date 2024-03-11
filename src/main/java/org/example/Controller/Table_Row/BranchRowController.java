@@ -9,8 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import org.example.Bo.BoFactor;
-import org.example.Bo.BranchBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.BranchService;
 import org.example.Controller.Table_Row.Update.UpdateBranchFormController;
 import org.example.Controller.Table_Row.View.ViewBranchFormController;
 import org.example.Dto.BranchDto;
@@ -70,12 +70,12 @@ public class BranchRowController {
         }
     }
 
-    BranchBo branchBo = (BranchBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Branch);
+    BranchService branchService = (BranchService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Branch);
 
     public void DeleteBtnOnActhion(ActionEvent actionEvent) {
         new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this branch?", ButtonType.YES, ButtonType.NO).showAndWait().ifPresent(buttonType -> {
             if (buttonType == ButtonType.YES){
-                branchBo.delete(branchDto.getId());
+                branchService.delete(branchDto.getId());
                 new Alert(Alert.AlertType.CONFIRMATION, "Deleted", ButtonType.OK).show();
             }
         });

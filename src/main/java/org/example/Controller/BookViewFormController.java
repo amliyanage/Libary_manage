@@ -9,9 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
-import org.example.Bo.BoFactor;
-import org.example.Bo.SearchBookBo;
-import org.example.Dao.Custom.DaoFactory;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.SearchBookService;
 import org.example.Dto.BookDto;
 
 import java.net.URL;
@@ -43,12 +42,12 @@ public class BookViewFormController implements Initializable {
     @FXML
     private TextField titleText;
 
-    SearchBookBo searchBookBo = (SearchBookBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Search_Book);
+    SearchBookService searchBookService = (SearchBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Search_Book);
 
     @FXML
     void searchOnActhion(ActionEvent event) {
 
-        BookDto bookDto = searchBookBo.getData(searchBar.getText());
+        BookDto bookDto = searchBookService.getData(searchBar.getText());
 
         titleText.setText(bookDto.getTitle());
         AutorText.setText(bookDto.getAutor());
@@ -68,7 +67,7 @@ public class BookViewFormController implements Initializable {
 
     private AutoCompletionBinding<String> Autotitle;
 
-    private List<String> titles = searchBookBo.getTitles();
+    private List<String> titles = searchBookService.getTitles();
 
     private Set<String> titleSet = new HashSet<>(titles);
 

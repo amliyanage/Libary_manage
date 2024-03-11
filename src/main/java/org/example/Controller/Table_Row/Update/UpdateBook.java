@@ -3,8 +3,8 @@ package org.example.Controller.Table_Row.Update;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import org.example.Bo.BoFactor;
-import org.example.Bo.ManageBookBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.ManageBookService;
 import org.example.Dto.BookDto;
 
 public class UpdateBook {
@@ -26,8 +26,8 @@ public class UpdateBook {
     }
 
     public void updateBtnOnActhion(ActionEvent actionEvent) {
-        ManageBookBo manageBookBo = (ManageBookBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Manage_Book);
-        manageBookBo.Update(new BookDto(
+        ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
+        manageBookService.Update(new BookDto(
                 bookDto.getId(),
                 title.getText(),
                 Author.getText(),

@@ -2,10 +2,9 @@ package org.example.Controller.Table_Row.Save;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import org.example.Bo.UserMangeBo;
-import org.example.Dto.AdminDto;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.UserMangeService;
 
 public class SaveUserFormController {
     @FXML
@@ -20,7 +19,7 @@ public class SaveUserFormController {
     @FXML
     private TextField username;
 
-    UserMangeBo userMangeBo = (UserMangeBo) org.example.Bo.BoFactor.getBoFactory().getBo(org.example.Bo.BoFactor.BoType.UserMange);
+    UserMangeService userMangeBo = (UserMangeService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.UserMange);
     @FXML
     void saveBtnOnActhion(ActionEvent event) {
 //      int id = userMangeBo.save(new AdminDto(0, name.getText(), username.getText(), password.getText(), email.getText()));

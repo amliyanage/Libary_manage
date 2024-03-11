@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import org.example.Bo.BoFactor;
-import org.example.Bo.BranchBo;
+import org.example.Bo.ServiceFactor;
+import org.example.Bo.BranchService;
 import org.example.Dto.BranchDto;
 
 public class UpdateBranchFormController {
@@ -28,11 +28,11 @@ public class UpdateBranchFormController {
         this.branchDto = branchDto;
     }
 
-    BranchBo branchBo = (BranchBo) BoFactor.getBoFactory().getBo(BoFactor.BoType.Branch);
+    BranchService branchService = (BranchService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Branch);
 
     @FXML
     void UpdateBtnOnActhion(ActionEvent event) {
-        branchBo.update(new BranchDto(branchDto.getId(), name.getText(), locationtext.getText(), email.getText()));
+        branchService.update(new BranchDto(branchDto.getId(), name.getText(), locationtext.getText(), email.getText()));
         new Alert(Alert.AlertType.CONFIRMATION, "Updated", ButtonType.OK).show();
     }
 }
