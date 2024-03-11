@@ -78,6 +78,7 @@ public class LoginPageController implements Initializable {
         }
     }
 
+    public static String memberUsername = "";
 
     void Member_login(){
         boolean logined = memberService.Login(Username.getText(), PasswordFild.getText());
@@ -85,6 +86,7 @@ public class LoginPageController implements Initializable {
         if (logined){
             Parent parent = null;
             try {
+                memberUsername = Username.getText();
                 parent = FXMLLoader.load( getClass().getResource( "/Forms/MainDashboardPage.fxml" ) );
                 Stage stage = (Stage) PasswordFild.getScene().getWindow();
                 stage.setScene(new Scene(parent));

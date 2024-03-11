@@ -41,7 +41,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 
     @Override
     public void Update(Member Data) {
-
+        session.update(Data);
     }
 
     @Override

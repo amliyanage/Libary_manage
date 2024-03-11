@@ -8,6 +8,7 @@ import org.example.Bo.ServiceFactor;
 import org.example.Bo.ManageBookService;
 import org.example.Controller.AdminController.ManageBookFormController;
 import org.example.Dto.BookDto;
+import org.example.unill.Regex;
 
 public class SaveBookFromController {
     @FXML
@@ -24,16 +25,21 @@ public class SaveBookFromController {
 
     @FXML
     void saveBtnOnActhion(ActionEvent event) {
-        ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
-        int yes = manageBookService.Save(new BookDto(0, title.getText(), autor.getText(), dis.getText(), Genre.getText(), "Yes"));
-        if (yes > 0){
-            title.setText("");
-            autor.setText("");
-            dis.setText("");
-            Genre.setText("");
-            new Alert(Alert.AlertType.INFORMATION, "Saved").show();
-            ManageBookFormController manageBookFormController = new ManageBookFormController();
-            manageBookFormController.initialize(null,null);
+        if (Regex.genre(this.Genre.getText()) && Regex.fullName(autor.getText()) && Regex.title(title.getText())){
+            ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
+            int yes = manageBookService.Save(new BookDto(0, title.getText(), autor.getText(), dis.getText(), Genre.getText(), "Yes"));
+            if (yes > 0){
+                title.setText("");
+                autor.setText("");
+                dis.setText("");
+                Genre.setText("");
+                new Alert(Alert.AlertType.INFORMATION, "Saved").show();
+                ManageBookFormController manageBookFormController = new ManageBookFormController();
+                manageBookFormController.initialize(null,null);
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR, "Invalid Input").show();
         }
     }
 

@@ -15,6 +15,7 @@ public class ViewBookFormController {
         available.setText(bookDto.getAvailable());
         title.setText(bookDto.getTitle());
         author.setText(bookDto.getAutor());
+        genre.setText(bookDto.getGenre());
         author.setText(bookDto.getGenre());
     }
 }

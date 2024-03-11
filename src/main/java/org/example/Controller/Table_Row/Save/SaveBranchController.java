@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.BranchService;
 import org.example.Dto.BranchDto;
+import org.example.unill.Regex;
 
 public class SaveBranchController {
 
@@ -18,14 +19,19 @@ public class SaveBranchController {
 
     @FXML
     public void saveBtnOnActhion(ActionEvent actionEvent) { // Corrected typo in method name
-        int save = branchService.save(new BranchDto(0, name.getText(), locationtext.getText(), email.getText()));
-        if (save > 0) {
-            name.clear();
-            locationtext.clear();
-            email.clear();
-            new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Try Again..").show();
+        if(Regex.name(name.getText()) && Regex.city(locationtext.getText()) && Regex.email(email.getText())){
+            int save = branchService.save(new BranchDto(0, name.getText(), locationtext.getText(), email.getText()));
+            if (save > 0) {
+                name.clear();
+                locationtext.clear();
+                email.clear();
+                new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Try Again..").show();
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR, "Invalid Input").show();
         }
     }
 }

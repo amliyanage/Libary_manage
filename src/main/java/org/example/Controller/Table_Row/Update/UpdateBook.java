@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.ManageBookService;
 import org.example.Dto.BookDto;
+import org.example.unill.Regex;
 
 public class UpdateBook {
     public TextField Genre;
@@ -26,15 +27,20 @@ public class UpdateBook {
     }
 
     public void updateBtnOnActhion(ActionEvent actionEvent) {
-        ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
-        manageBookService.Update(new BookDto(
-                bookDto.getId(),
-                title.getText(),
-                Author.getText(),
-                bookDto.getDis(),
-                Genre.getText(),
-                available.getText()
-        ));
-        new Alert(Alert.AlertType.INFORMATION,"Updated").show();
+        if (Regex.title(title.getText()) && Regex.fullName(Author.getText()) && Regex.genre(Genre.getText())){
+            ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
+            manageBookService.Update(new BookDto(
+                    bookDto.getId(),
+                    title.getText(),
+                    Author.getText(),
+                    bookDto.getDis(),
+                    Genre.getText(),
+                    available.getText()
+            ));
+            new Alert(Alert.AlertType.INFORMATION,"Updated").show();
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Invalid Input").show();
+        }
     }
 }

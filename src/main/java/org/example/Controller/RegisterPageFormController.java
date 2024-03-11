@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.RegisterService;
 import org.example.Dto.MemberDto;
+import org.example.unill.Regex;
 
 import java.io.IOException;
 import java.net.URL;
@@ -49,7 +50,7 @@ public class RegisterPageFormController implements Initializable {
     private Button viewPass;
 
 
-    RegisterService registerService = (RegisterService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Register);
+    private final RegisterService registerService = (RegisterService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Register);
 
     Boolean flag = false;
     Boolean flag1 = false;
@@ -109,7 +110,17 @@ public class RegisterPageFormController implements Initializable {
     }
 
     public void RegisterbtnOnActhion(ActionEvent actionEvent) {
-        Register();
+        if (Regex.email(emailText.getText()) && Regex.fullName(NameText.getText()) && Regex.userName(usernameText.getText())){
+            if (PasswordFild.getText().equals(PasswordConfirm.getText())) {
+                Register();
+            }
+            else {
+                new Alert(Alert.AlertType.ERROR,"Password Not Match").show();
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Invalid Input").show();
+        }
     }
 
     private void Register() {
