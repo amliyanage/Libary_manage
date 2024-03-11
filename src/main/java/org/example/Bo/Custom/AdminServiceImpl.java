@@ -14,6 +14,8 @@ public class AdminServiceImpl implements AdminService {
     AdminRepository adminRepository = (AdminRepository) RepositoryFactory.getDaoFactory().getDao( RepositoryFactory.DaoType.admin );
 
     public static AdminDto data;
+
+    public static Admin admin;
     @Override
     public boolean getData(String Id, String Password) {
         session = SessionFactoryConfiguration.getInstance().getSession();
@@ -22,6 +24,7 @@ public class AdminServiceImpl implements AdminService {
 
         if (data != null && Password.equals(data.getPassword())){
             this.data = new AdminDto(data.getId(),data.getName(),data.getUsername(),data.getPassword(),data.getEmail());
+            admin = data;
             return true;
         }
         else {

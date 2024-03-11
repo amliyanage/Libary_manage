@@ -24,7 +24,13 @@ public class DashboardServiceImpl implements DashboardService {
     public void Update(AdminDto Data) throws Exception {
         session = SessionFactoryConfiguration.getInstance().getSession();
         adminRepository.SetSession(session);
-        adminRepository.Update(new Admin(Data.getId(),Data.getName(),Data.getUsername(),Data.getPassword(),Data.getEmail()));
+        Admin admin = new Admin();
+        admin.setId(Data.getId());
+        admin.setName(Data.getName());
+        admin.setUsername(Data.getUsername());
+        admin.setPassword(Data.getPassword());
+        admin.setEmail(Data.getEmail());
+        adminRepository.Update(admin);
         transaction = session.beginTransaction();
         transaction.commit();
     }

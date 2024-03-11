@@ -36,7 +36,7 @@ public class ManageBookServiceImpl implements ManageBookService {
     public void Update(BookDto Data) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         bookRepository.SetSession(session);
-        bookRepository.Update(new Books(Data.getId(),Data.getTitle(),Data.getAutor(),Data.getDis(),Data.getGenre(),Data.getAvailable()));
+        bookRepository.Update(new Books(Data.getId(),Data.getTitle(),Data.getAutor(),Data.getDis(),Data.getGenre(),Data.getAvailable(),AdminServiceImpl.admin));
         transaction = session.beginTransaction();
         transaction.commit();
     }
@@ -54,7 +54,7 @@ public class ManageBookServiceImpl implements ManageBookService {
     public int Save(BookDto yes) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         bookRepository.SetSession(session);
-        int saved = bookRepository.saved(new Books(yes.getId(), yes.getTitle(), yes.getAutor(), yes.getDis(), yes.getGenre(), yes.getAvailable()));
+        int saved = bookRepository.saved(new Books(yes.getId(), yes.getTitle(), yes.getAutor(), yes.getDis(), yes.getGenre(), yes.getAvailable(),AdminServiceImpl.admin));
         transaction = session.beginTransaction();
         transaction.commit();
         if (saved > 0) {

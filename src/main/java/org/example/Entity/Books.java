@@ -4,14 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.example.Dto.BookDto;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "Book")
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @ToString
 public class Books {
@@ -35,5 +36,20 @@ public class Books {
 
     @Column(name = "Available")
     private String available;
+
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
+
+    public BookDto toDto() {
+        return new BookDto(
+                this.id,
+                this.title,
+                this.autor,
+                this.dis,
+                this.genre,
+                this.available
+        );
+    }
     
 }

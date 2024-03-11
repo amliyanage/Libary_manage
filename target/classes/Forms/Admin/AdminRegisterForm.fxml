@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1080" prefWidth="1920" stylesheets="@../../img/Styles/RegiterPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.AdminController.AdminRegisterFormController">
+   <children>
+      <ImageView fitHeight="1081.0" fitWidth="1921.0" layoutX="50.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../img/adminLoginPage.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="usernameText" layoutX="1189.0" layoutY="475.0" styleClass="filed" />
+      <TextField fx:id="emailText" layoutX="1189.0" layoutY="578.0" styleClass="filed" />
+      <PasswordField fx:id="PasswordFild" layoutX="1188.0" layoutY="692.0" styleClass="filed" />
+      <PasswordField fx:id="PasswordConfirm" layoutX="1189.0" layoutY="800.0" styleClass="filed" />
+      <TextField fx:id="PasswordTextFild" layoutX="1189.0" layoutY="692.0" styleClass="filed" />
+      <TextField fx:id="PasswordConfirmText" layoutX="1188.0" layoutY="799.0" styleClass="filed" />
+      <Text layoutX="1281.0" layoutY="992.0" onMouseClicked="#loginBtnOnAction" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_New_Account" text="Login Now" />
+      <Button fx:id="viewPass" layoutX="1735.0" layoutY="703.0" mnemonicParsing="false" onAction="#viewPassOnActhion" prefHeight="29.0" prefWidth="29.0" styleClass="eye" stylesheets="@../../img/Styles/LoginPage.css" />
+      <Button fx:id="viewConfirmPass" layoutX="1737.0" layoutY="811.0" mnemonicParsing="false" onAction="#viewConfirmPassOnActhion" prefHeight="29.0" prefWidth="29.0" styleClass="eye" stylesheets="@../../img/Styles/LoginPage.css" />
+      <Button layoutX="1246.0" layoutY="881.0" mnemonicParsing="false" onAction="#RegisterbtnOnActhion" styleClass="buttonLogin" stylesheets="@../../img/Styles/LoginPage.css" text="Register" />
+      <TextField fx:id="NameText" layoutX="1189.0" layoutY="365.0" styleClass="filed" />
+   </children>
+</AnchorPane>

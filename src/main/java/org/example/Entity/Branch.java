@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.example.Dto.BranchDto;
 
 import javax.persistence.*;
 
@@ -27,4 +28,17 @@ public class Branch {
 
     @Column( name = "Email" )
     private String Email;
+
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
+
+    public BranchDto toDto() {
+        return new BranchDto(
+                this.Id,
+                this.Name,
+                this.Location,
+                this.Email
+        );
+    }
 }

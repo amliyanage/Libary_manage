@@ -34,7 +34,7 @@ public class BranchServiceImpl implements BranchService {
     public int save(BranchDto branchDto) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         branchRepository.SetSession(session);
-        int saved =  branchRepository.saved(new Branch(branchDto.getId(), branchDto.getName(), branchDto.getLocation(), branchDto.getEmail()));
+        int saved =  branchRepository.saved(new Branch(branchDto.getId(), branchDto.getName(), branchDto.getLocation(), branchDto.getEmail(), AdminServiceImpl.admin));
         transaction = session.beginTransaction();
         transaction.commit();
         if (saved > 0) {
@@ -50,7 +50,7 @@ public class BranchServiceImpl implements BranchService {
     public void update(BranchDto branchDto) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         branchRepository.SetSession(session);
-        branchRepository.Update(new Branch(branchDto.getId(), branchDto.getName(), branchDto.getLocation(), branchDto.getEmail()));
+        branchRepository.Update(new Branch(branchDto.getId(), branchDto.getName(), branchDto.getLocation(), branchDto.getEmail(),AdminServiceImpl.admin));
         transaction = session.beginTransaction();
         transaction.commit();
     }
