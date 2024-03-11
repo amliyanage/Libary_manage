@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="1082.0" prefWidth="1611.0" styleClass="background" stylesheets="@../img/Styles/DashBoardPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.DashBoardPageFormController">
    <children>
       <ImageView fitHeight="1084.0" fitWidth="566.0" layoutX="1045.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -22,12 +21,12 @@
          </image>
       </ImageView>
       <Text layoutX="141.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="100" />
-      <TextField layoutX="1143.0" layoutY="513.0" />
-      <TextField layoutX="1144.0" layoutY="624.0" />
-      <PasswordField fx:id="PasswordFild" layoutX="1147.0" layoutY="735.0" />
-      <TextField fx:id="PasswordTextFild" layoutX="1147.0" layoutY="735.0" />
+      <TextField fx:id="emailText" editable="false" layoutX="1143.0" layoutY="513.0" />
+      <TextField fx:id="UsernameText" editable="false" layoutX="1144.0" layoutY="624.0" />
+      <PasswordField fx:id="PasswordFild" editable="false" layoutX="1147.0" layoutY="735.0" />
+      <TextField fx:id="PasswordTextFild" editable="false" layoutX="1147.0" layoutY="735.0" />
       <Button fx:id="viewPass" layoutX="1540.0" layoutY="745.0" minHeight="46.0" minWidth="46.0" mnemonicParsing="false" onAction="#viewPassOnActhion" prefHeight="27.0" prefWidth="25.0" styleClass="eye" />
-      <Button layoutX="1232.0" layoutY="852.0" mnemonicParsing="false" styleClass="ChangePass" text="Change Password">
+      <Button layoutX="1232.0" layoutY="852.0" mnemonicParsing="false" onAction="#ChangePasswordOnActhion" styleClass="ChangePass" text="Change Password">
          <graphic>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password" />
          </graphic>
