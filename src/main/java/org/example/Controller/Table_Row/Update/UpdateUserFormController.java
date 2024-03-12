@@ -9,7 +9,7 @@ import org.example.Bo.ServiceFactor;
 import org.example.Bo.Custom.AdminServiceImpl;
 import org.example.Bo.DashboardService;
 import org.example.Dto.AdminDto;
-import org.example.unill.Regex;
+import org.example.unill.Validation;
 
 public class UpdateUserFormController {
     @FXML
@@ -29,7 +29,7 @@ public class UpdateUserFormController {
     DashboardService userMangeBo = (DashboardService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.DashBoard);
     @FXML
     void updateBtnOnActhion(ActionEvent event) {
-        if(Regex.fullName(name.getText()) && Regex.userName(username.getText()) && Regex.email(email.getText())){
+        if(Validation.isValidName(name.getText()) && Validation.isValidEmail(email.getText())){
             try {
                 userMangeBo.Update(new AdminDto(adminDto.getId(),name.getText(),username.getText(),password.getText(),email.getText()));
             } catch (Exception e) {

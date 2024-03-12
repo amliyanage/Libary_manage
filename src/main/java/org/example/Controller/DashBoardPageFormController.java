@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import org.example.Bo.MemberDashboardServer;
 import org.example.Bo.ServiceFactor;
 import org.example.Dto.MemberDto;
-import org.example.unill.Regex;
+import org.example.unill.Validation;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -89,7 +89,7 @@ public class DashBoardPageFormController implements Initializable {
     }
 
     void ChangePassword(){
-        if (Regex.email(emailText.getText()) && Regex.userName(UsernameText.getText())){
+        if (Validation.isValidEmail(emailText.getText())){
             memberDashboardServer.Update(new MemberDto(Id,name,UsernameText.getText(),PasswordFild.getText(),emailText.getText()));
             new Alert(Alert.AlertType.INFORMATION,"Password Changed").show();
         }

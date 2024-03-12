@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.ManageBookService;
 import org.example.Dto.BookDto;
-import org.example.unill.Regex;
+import org.example.unill.Validation;
 
 public class UpdateBook {
     public TextField Genre;
@@ -27,7 +27,7 @@ public class UpdateBook {
     }
 
     public void updateBtnOnActhion(ActionEvent actionEvent) {
-        if (Regex.title(title.getText()) && Regex.fullName(Author.getText()) && Regex.genre(Genre.getText())){
+        if (Validation.validateBookTitle(title.getText()) && Validation.isValidName(Author.getText()) && Validation.isValidAddress(Genre.getText())){
             ManageBookService manageBookService = (ManageBookService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Manage_Book);
             manageBookService.Update(new BookDto(
                     bookDto.getId(),

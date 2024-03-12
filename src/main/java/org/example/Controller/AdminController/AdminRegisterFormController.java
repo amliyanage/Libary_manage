@@ -12,11 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.example.Bo.AdminRegisterService;
-import org.example.Bo.RegisterService;
 import org.example.Bo.ServiceFactor;
 import org.example.Dto.AdminDto;
-import org.example.Dto.MemberDto;
-import org.example.unill.Regex;
+import org.example.unill.Validation;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,8 +49,8 @@ public class AdminRegisterFormController {
 
     private final AdminRegisterService registerService = (AdminRegisterService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Admin_Register);
 
-    Boolean flag = false;
-    Boolean flag1 = false;
+    Boolean flag = true;
+    Boolean flag1 = true;
     @FXML
     void viewConfirmPassOnActhion(ActionEvent event) {
         String Password = PasswordConfirm.getText();
@@ -108,21 +106,21 @@ public class AdminRegisterFormController {
     }
 
     public void RegisterbtnOnActhion(ActionEvent actionEvent) {
-//        if (Regex.email(emailText.getText()) && Regex.fullName(NameText.getText()) && Regex.userName(usernameText.getText())){
+        if (Validation.isValidEmail(emailText.getText()) && Validation.isValidName(NameText.getText())){
             if (PasswordFild.getText().equals(PasswordConfirm.getText())) {
                 Register();
             }
             else {
                 new Alert(Alert.AlertType.ERROR,"Password Not Match").show();
             }
-//        }
-//        else {
-//            new Alert(Alert.AlertType.ERROR,"Invalid Input").show();
-//        }
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Invalid Input").show();
+        }
     }
 
     private void Register() {
-        int register = registerService.saveAdmin(new AdminDto(1,NameText.getText(), usernameText.getText(), PasswordFild.getText(), emailText.getText()));
+        int register = registerService.saveAdmin(new AdminDto(1,NameText.getText(), usernameText.getText(), PasswordTextFild.getText(), emailText.getText()));
 
         if (register != -1){
 

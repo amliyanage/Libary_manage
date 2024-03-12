@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.BranchService;
 import org.example.Dto.BranchDto;
-import org.example.unill.Regex;
+import org.example.unill.Validation;
 
 public class UpdateBranchFormController {
     @FXML
@@ -33,7 +33,7 @@ public class UpdateBranchFormController {
 
     @FXML
     void UpdateBtnOnActhion(ActionEvent event) {
-        if (Regex.name(name.getText()) && Regex.city(locationtext.getText()) && Regex.email(email.getText())){
+        if (Validation.isValidName(name.getText()) && Validation.isValidAddress(locationtext.getText()) && Validation.isValidEmail(email.getText())){
             branchService.update(new BranchDto(branchDto.getId(), name.getText(), locationtext.getText(), email.getText()));
             new Alert(Alert.AlertType.CONFIRMATION, "Updated", ButtonType.OK).show();
 

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.RegisterService;
 import org.example.Dto.MemberDto;
-import org.example.unill.Regex;
+import org.example.unill.Validation;
 
 import java.io.IOException;
 import java.net.URL;
@@ -110,7 +110,7 @@ public class RegisterPageFormController implements Initializable {
     }
 
     public void RegisterbtnOnActhion(ActionEvent actionEvent) {
-        if (Regex.email(emailText.getText()) && Regex.fullName(NameText.getText()) && Regex.userName(usernameText.getText())){
+        if (Validation.isValidEmail(emailText.getText()) && Validation.isValidName(NameText.getText())){
             if (PasswordFild.getText().equals(PasswordConfirm.getText())) {
                 Register();
             }
