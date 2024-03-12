@@ -29,7 +29,6 @@
     -fx-background-color: #fff;
     -fx-border-width: 0px 0px 2px 0px;
     -fx-border-color: #A6A6A6;
-
 }
 
 .text-area{
@@ -63,4 +62,14 @@
 }
 .Back{
     -fx-background-color: #FFF;
+}
+
+.date-picker{
+    -fx-min-width: 495.004px;
+    -fx-min-height: 52px;
+    -fx-text-fill: #000;
+    -fx-font-size: 18px;
+    -fx-background-color: #fff;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: #A6A6A6;
 }

@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "Member")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Member {
@@ -32,5 +33,15 @@ public class Member {
 
     @Column(name = "Email")
     private String email;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "member")
+    private List<BorrowBook> transactions = new ArrayList<>();
+
+    public Member(int Id,String full_name, String username, String password, String email) {
+        this.full_name = full_name;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 }
 

@@ -7,12 +7,13 @@ import lombok.ToString;
 import org.example.Dto.BookDto;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "Book")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 @ToString
 public class Books {
@@ -41,6 +42,9 @@ public class Books {
     @JoinColumn(name = "admin_id")
     private Admin admin;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "book")
+    private List<Book_Transaction> details = new ArrayList<>();
+
     public BookDto toDto() {
         return new BookDto(
                 this.id,
@@ -51,5 +55,14 @@ public class Books {
                 this.available
         );
     }
-    
+
+    public Books(int id, String title, String autor, String dis, String genre, String available, Admin admin) {
+        this.id = id;
+        this.title = title;
+        this.autor = autor;
+        this.dis = dis;
+        this.genre = genre;
+        this.available = available;
+        this.admin = admin;
+    }
 }

@@ -14,7 +14,7 @@ public class ServiceFactor {
     }
 
     public enum BoType{
-        Member,Admin,Search_Book,Register,Manage_Book,UserMange,Branch,DashBoard,MemberDashBoard,Admin_Register
+        Member,Admin,Search_Book,Register,Manage_Book,UserMange,Branch,DashBoard,MemberDashBoard,Admin_Register,Borrow_Book
     }
 
     public SuperService getBo(BoType boType){
@@ -39,6 +39,8 @@ public class ServiceFactor {
                 return new MemberDashboardServerImpl();
             case Admin_Register:
                 return new AdminRegisterServiceImpl();
+            case Borrow_Book:
+                return new BorrowBookServiceImpl();
             default:
                 return null;
         }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Utility {
-
     public static Properties getProperties() {
         Properties properties = new Properties();
         try {
@@ -17,5 +16,4 @@ public class Utility {
         }
         return properties;
     }
-
 }
