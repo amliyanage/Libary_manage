@@ -15,20 +15,20 @@
             <Image url="@../img/GetBook.png" />
          </image>
       </ImageView>
-      <TextField layoutX="165.0" layoutY="149.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="935.0" layoutY="149.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="936.0" layoutY="315.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="166.0" layoutY="315.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
-      <Button layoutX="1255.0" layoutY="410.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="183.0" styleClass="addBtn" stylesheets="@../img/Styles/BorrowBookPage.css" />
-      <Button layoutX="1273.0" layoutY="961.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="192.0" styleClass="getButton" stylesheets="@../img/Styles/BorrowBookPage.css" />
+      <TextField fx:id="memberIdText" layoutX="165.0" layoutY="149.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <TextField fx:id="SearchBook" layoutX="935.0" layoutY="149.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <TextField fx:id="Return_Book" layoutX="936.0" layoutY="315.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <Button layoutX="1255.0" layoutY="410.0" mnemonicParsing="false" onAction="#addBtnOnActhion" prefHeight="64.0" prefWidth="183.0" styleClass="addBtn" stylesheets="@../img/Styles/BorrowBookPage.css" />
+      <Button layoutX="1275.0" layoutY="972.0" mnemonicParsing="false" onAction="#gtOnActhion" prefHeight="73.0" prefWidth="192.0" styleClass="getButton" stylesheets="@../img/Styles/BorrowBookPage.css" />
       <ScrollPane layoutX="418.0" layoutY="570.0" prefHeight="318.0" prefWidth="767.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="311.0" prefWidth="765.0">
                <children>
-                  <VBox layoutX="-3.0" prefHeight="311.0" prefWidth="767.0" style="-fx-background-color: #FFFF;" />
+                  <VBox fx:id="vBox" layoutX="-3.0" prefHeight="311.0" prefWidth="767.0" style="-fx-background-color: #FFFF;" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
+      <TextField fx:id="Date" layoutX="165.0" layoutY="314.0" styleClass="text-field1" stylesheets="@../img/Styles/ViewBookPage.css" />
    </children>
 </AnchorPane>
