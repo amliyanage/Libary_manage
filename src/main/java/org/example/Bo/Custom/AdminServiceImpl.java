@@ -25,9 +25,11 @@ public class AdminServiceImpl implements AdminService {
         if (data != null && Password.equals(data.getPassword())){
             this.data = new AdminDto(data.getId(),data.getName(),data.getUsername(),data.getPassword(),data.getEmail());
             admin = data;
+            session.close();
             return true;
         }
         else {
+            session.close();
             return false;
         }
     }

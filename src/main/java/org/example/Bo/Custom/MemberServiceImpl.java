@@ -22,9 +22,11 @@ public class MemberServiceImpl implements MemberService {
 
         if (data != null && data.getPassword().equals(Password)){
             member = data;
+            session.close();
             return true;
         }
         else {
+            session.close();
             return false;
         }
     }

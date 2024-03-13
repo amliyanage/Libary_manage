@@ -14,7 +14,6 @@ import java.util.Set;
 @Table(name = "Member")
 @Data
 @NoArgsConstructor
-@ToString
 public class Member {
 
     @Id
@@ -44,4 +43,3 @@ public class Member {
         this.email = email;
     }
 }
-

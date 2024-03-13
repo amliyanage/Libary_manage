@@ -11,11 +11,14 @@ import org.example.Entity.Books;
 import org.example.Entity.BorrowBook;
 import org.example.Entity.Member;
 import org.example.unill.SessionFactoryConfiguration;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.engine.transaction.internal.TransactionImpl;
 
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BorrowBookServiceImpl implements BorrowBookService {
@@ -23,9 +26,9 @@ public class BorrowBookServiceImpl implements BorrowBookService {
     private Session session;
 
     private final BookRepository bookRepository = (BookRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.Books);
-
     private final BorrowBookRepository borrowBookRepository = (BorrowBookRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.BorrowBook);
     private final BookTransactionRepository transactionRepository = (BookTransactionRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.Book_Transaction);
+
     @Override
     public List<String> getTitles() {
         session = SessionFactoryConfiguration.getInstance().getSession();
@@ -39,99 +42,66 @@ public class BorrowBookServiceImpl implements BorrowBookService {
         bookRepository.SetSession(session);
         Books data = bookRepository.getData(title);
 
-        return new BookDto( data.getId() , data.getTitle() , data.getAutor(), data.getDis(), data.getGenre() , data.getAvailable());
+        return new BookDto(data.getId(), data.getTitle(), data.getAutor(), data.getDis(), data.getGenre(), data.getAvailable());
     }
-
-//    @Override
-//    public boolean saveTransaction(TransactionDto dto, MemberDto member, List<BookDto> books) {
-//        BorrowBook entity = dto.toEntity();
-//        entity.setMember(MemberServiceImpl.member);
-//
-//        session = SessionFactoryConfiguration.getInstance().getSession();
-//        org.hibernate.Transaction transaction = session.beginTransaction();
-//
-//        try {
-//
-//            transactionRepository.SetSession(session);
-//            int id = transactionRepository.saved(entity);
-//
-//            for (BookDto bookDto : books) {
-//
-//                bookDto.setAvailable("Not Available");
-//                bookRepository.SetSession(session);
-//                bookRepository.Update(new Books(
-//                        bookDto.getId(),
-//                        bookDto.getTitle(),
-//                        bookDto.getAutor(),
-//                        bookDto.getDis(),
-//                        bookDto.getGenre(),
-//                        bookDto.getAvailable(),
-//                        AdminServiceImpl.admin
-//                ));
-//
-//                transactionDetailRepository.SetSession(session);
-//                TransactionDetailPK pk = transactionDetailRepository.Saved(new Book_Transaction(
-//                        new TransactionDetailPK(entity.getId(), bookDto.getId()),
-//                        entity,
-//                        new Books()
-//                ));
-//            }
-//
-//            transaction.commit();
-//            return true;
-//
-//        } catch (Exception e) {
-//
-//            transaction.rollback();
-//            e.printStackTrace();
-//            return false;
-//
-//        } finally {
-//            session.close();
-//        }
-//    }
 
     @Override
     public boolean saveTransaction(List<String> data) {
+
         Member member = MemberServiceImpl.member;
+
+        List<Books> books = new ArrayList<>();
 
         session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        borrowBookRepository.SetSession(session);
-        int saved = 0;
-        for (int i = 0; i < data.size(); i++) {
 
+        for (String title : data) {
+            bookRepository.SetSession(session);
+            books.add(bookRepository.getData(title));
+        }
+
+        Date date = Date.valueOf(LocalDate.now().plusDays(7));
+
+
+        try {
             BorrowBook borrowBook = new BorrowBook(
+                    -1,
                     data.size(),
-                    LocalDate.now().plusDays(7),
-                    "Pending",
-                    member
+                    date,
+                    "No",
+                    null,
+                    member,
+                    new ArrayList<>()
             );
 
-            int save = borrowBookRepository.saved( borrowBook );
-            if (save < 0) {
-                transaction.rollback();
-                return false;
-            }
-            transaction.commit();
-            session.close();
-            if (save > 0) {
+            borrowBookRepository.SetSession(session);
+            int saved = borrowBookRepository.saved(borrowBook);
 
-                session = SessionFactoryConfiguration.getInstance().getSession();
-                Transaction transaction1 = session.beginTransaction();
+            for (Books book : books) {
+                book.setAvailable("No");
+                bookRepository.SetSession(session);
+                bookRepository.Update(book);
+
+                Book_Transaction bookTransaction = new Book_Transaction(
+                        -1,
+                        borrowBook,
+                        book
+                );
+
                 transactionRepository.SetSession(session);
-                int saved1 = transactionRepository.saved(new Book_Transaction(1, borrowBook, bookRepository.getData(data.get(i))));
-                transaction1.commit();
-                System.out.println(saved1);
-
-                if (saved1 < 0) {
-                    transaction1.rollback();
-                    transaction.rollback();
-                    return false;
-                }
+                transactionRepository.saved(bookTransaction);
             }
-        }
-        return true;
-    }
 
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+
+        } finally {
+            session.close();
+        }
+
+    }
 }

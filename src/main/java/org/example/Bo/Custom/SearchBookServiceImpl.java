@@ -20,7 +20,7 @@ public class SearchBookServiceImpl implements SearchBookService {
         session = SessionFactoryConfiguration.getInstance().getSession();
         bookRepository.SetSession(session);
         Books data = bookRepository.getData(title);
-
+        session.close();
         return new BookDto( data.getId() , data.getTitle() , data.getAutor(), data.getDis(), data.getGenre() , data.getAvailable());
     }
 
@@ -28,7 +28,9 @@ public class SearchBookServiceImpl implements SearchBookService {
     public List<String> getTitles() {
         session = SessionFactoryConfiguration.getInstance().getSession();
         bookRepository.SetSession(session);
-        return bookRepository.getOneData();
+        List<String> list = bookRepository.getOneData();
+        session.close();
+        return list;
     }
 
 }

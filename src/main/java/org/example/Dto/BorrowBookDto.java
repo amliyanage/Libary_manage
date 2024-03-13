@@ -29,15 +29,4 @@ import lombok.NoArgsConstructor;
 
         private Member member;
 
-        public BorrowBook toEntity() {
-            return new BorrowBook(
-                    id,
-                    qty,
-                    dueDate,
-                    status,
-                    addedDate,
-                    member,
-                    new ArrayList<>()
-                    );
-        }
     }

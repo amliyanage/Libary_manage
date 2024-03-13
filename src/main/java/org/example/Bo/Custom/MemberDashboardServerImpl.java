@@ -18,7 +18,7 @@ public class MemberDashboardServerImpl implements MemberDashboardServer {
         session = SessionFactoryConfiguration.getInstance().getSession();
         memberRepository.SetSession(session);
         Member data = memberRepository.getData(username);
-
+        session.close();
         return new MemberDto(data.getId(), data.getFull_name(), data.getUsername(), data.getPassword(), data.getEmail());
     }
 
@@ -29,5 +29,6 @@ public class MemberDashboardServerImpl implements MemberDashboardServer {
         memberRepository.Update(new Member(memberDto.getId(), memberDto.getFull_name(), memberDto.getUsername(), memberDto.getPassword(), memberDto.getEmail()));
         transaction = session.beginTransaction();
         transaction.commit();
+        session.close();
     }
 }

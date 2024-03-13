@@ -31,16 +31,7 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public int saved(Books data) {
-        Transaction transaction = session.beginTransaction();
-        int value = (int) session.save(data);
-        transaction.commit();
-        if (value > 0) {
-            return value;
-        }
-        else {
-            transaction.rollback();
-            return -1;
-        }
+        return  (int) session.save(data);
     }
 
     @Override
@@ -53,17 +44,13 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void Update(Books Data) {
-        Transaction transaction = session.beginTransaction();
         session.update(Data);
-        transaction.commit();
     }
 
     @Override
     public void Delete(int Id) {
-        Transaction transaction = session.beginTransaction();
         Books books = session.get(Books.class, Id);
         session.delete(books);
-        transaction.commit();
     }
 
     @Override

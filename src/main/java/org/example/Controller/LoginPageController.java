@@ -121,4 +121,14 @@ public class LoginPageController implements Initializable {
         }
     }
 
+    public void forgetPasswordOnActhion(MouseEvent mouseEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Forms/ForgetPassWord.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(parent));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

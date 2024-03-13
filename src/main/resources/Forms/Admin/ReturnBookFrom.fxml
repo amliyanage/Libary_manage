@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="1082.0" prefWidth="1611.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.AdminController.ReturnBookFromController">
    <children>
@@ -14,11 +14,11 @@
             <Image url="@../../img/retrunBook.png" />
          </image>
       </ImageView>
-      <TextField layoutX="134.0" layoutY="264.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="943.0" layoutY="264.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="941.0" layoutY="428.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="133.0" layoutY="428.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
-      <TextField layoutX="137.0" layoutY="591.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
-      <Button layoutX="941.0" layoutY="579.0" mnemonicParsing="false" opacity="0.0" prefHeight="72.0" prefWidth="205.0" text="Button" />
+      <TextField fx:id="Date" layoutX="943.0" layoutY="264.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
+      <TextField fx:id="BookCount" layoutX="941.0" layoutY="428.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
+      <TextField fx:id="ReturnData" layoutX="133.0" layoutY="428.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
+      <TextField fx:id="Payment" layoutX="137.0" layoutY="591.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
+      <Button layoutX="941.0" layoutY="579.0" mnemonicParsing="false" onAction="#returnBtnOnActhion" opacity="0.0" prefHeight="72.0" prefWidth="205.0" text="Button" />
+      <ComboBox fx:id="MemberIdCombo" layoutX="134.0" layoutY="264.0" minHeight="43.0" onAction="#ComboOnActhion" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
    </children>
 </AnchorPane>

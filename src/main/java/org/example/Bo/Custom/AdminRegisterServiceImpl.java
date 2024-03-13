@@ -25,9 +25,11 @@ public class AdminRegisterServiceImpl implements AdminRegisterService {
         transaction = session.beginTransaction();
         transaction.commit();
         if (saved > 0) {
+            session.close();
             return saved;
         } else {
             transaction.rollback();
+            session.close();
             return -1;
         }
     }

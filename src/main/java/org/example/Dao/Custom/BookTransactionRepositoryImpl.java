@@ -3,7 +3,6 @@ package org.example.Dao.Custom;
 import org.example.Dao.BookTransactionRepository;
 
 import org.example.Entity.Book_Transaction;
-import org.example.Entity.TransactionDetailPK;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -22,9 +21,13 @@ public class BookTransactionRepositoryImpl implements BookTransactionRepository 
     }
 
     @Override
-    public int saved(Book_Transaction data) {
-        return (int) session.save(data);
+    public int saved(Book_Transaction transaction) {
+        System.out.println(transaction.getTransaction().getId());
+        System.out.println(transaction.getBook().getId());
+        int save = (int) session.save(transaction);
+        return save;
     }
+
 
     @Override
     public ArrayList<Book_Transaction> getAll() {

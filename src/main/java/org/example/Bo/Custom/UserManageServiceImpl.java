@@ -29,7 +29,7 @@ public class UserManageServiceImpl implements UserMangeService {
         for (Member admin : all) {
             admins.add(new MemberDto(admin.getId(), admin.getFull_name(), admin.getUsername(), admin.getPassword(), admin.getEmail()));
         }
-
+        session.close();
         return admins;
     }
 
@@ -40,6 +40,7 @@ public class UserManageServiceImpl implements UserMangeService {
         memberRepository.Delete(Id);
         transaction = session.beginTransaction();
         transaction.commit();
+        session.close();
     }
 
 

@@ -27,6 +27,7 @@ public class BranchServiceImpl implements BranchService {
         for (Branch branch : all) {
             branchDtos.add(new BranchDto(branch.getId(), branch.getName(), branch.getLocation(), branch.getEmail()));
         }
+        session.close();
         return branchDtos;
     }
 
@@ -38,10 +39,12 @@ public class BranchServiceImpl implements BranchService {
         transaction = session.beginTransaction();
         transaction.commit();
         if (saved > 0) {
+            session.close();
             return saved;
         }
         else {
             transaction.rollback();
+            session.close();
             return -1;
         }
     }
@@ -53,6 +56,7 @@ public class BranchServiceImpl implements BranchService {
         branchRepository.Update(new Branch(branchDto.getId(), branchDto.getName(), branchDto.getLocation(), branchDto.getEmail(),AdminServiceImpl.admin));
         transaction = session.beginTransaction();
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -62,5 +66,6 @@ public class BranchServiceImpl implements BranchService {
         branchRepository.Delete(id);
         transaction = session.beginTransaction();
         transaction.commit();
+        session.close();
     }
 }

@@ -33,6 +33,7 @@ public class DashboardServiceImpl implements DashboardService {
         adminRepository.Update(admin);
         transaction = session.beginTransaction();
         transaction.commit();
+        session.close();
     }
 
     @Override
@@ -42,24 +43,31 @@ public class DashboardServiceImpl implements DashboardService {
         adminRepository.Delete(id);
         transaction = session.beginTransaction();
         transaction.commit();
+        session.close();
     }
 
     @Override
     public long BookCount(){
         session = SessionFactoryConfiguration.getInstance().getSession();
         bookRepository.SetSession(session);
-        return bookRepository.Count();
+        long count = bookRepository.Count();
+        session.close();
+        return count;
     }
     @Override
     public long MemberCount(){
         session = SessionFactoryConfiguration.getInstance().getSession();
         adminRepository.SetSession(session);
-        return adminRepository.Count();
+        long count = adminRepository.Count();
+        session.close();
+        return count;
     }
     @Override
     public long BranchCount(){
         session = SessionFactoryConfiguration.getInstance().getSession();
         branchRepository.SetSession(session);
-        return branchRepository.Count();
+        long count = branchRepository.Count();
+        session.close();
+        return count;
     }
 }
