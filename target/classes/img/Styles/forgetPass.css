@@ -1,0 +1,15 @@
+.background{
+    -fx-background-color: rgba(255, 255, 255, 0.70);
+    -fx-effect: blur(12px);
+}
+.text-field{
+    -fx-border-color: black;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-min-height: 74px;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-font-size: 48px;
+    -fx-padding: 8px 25px 8px 25px;
+}
+.label{
+    -fx-background-color: #FFF;
+}

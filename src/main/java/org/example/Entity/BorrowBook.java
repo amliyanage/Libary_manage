@@ -42,6 +42,9 @@ public class BorrowBook{
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "transaction")
+    @Column(name = "Payment")
+    private double payment;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "transaction")
     private List<Book_Transaction> details = new ArrayList<>();
 }

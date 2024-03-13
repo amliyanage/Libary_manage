@@ -19,6 +19,6 @@
       <TextField fx:id="ReturnData" layoutX="133.0" layoutY="428.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
       <TextField fx:id="Payment" layoutX="137.0" layoutY="591.0" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
       <Button layoutX="941.0" layoutY="579.0" mnemonicParsing="false" onAction="#returnBtnOnActhion" opacity="0.0" prefHeight="72.0" prefWidth="205.0" text="Button" />
-      <ComboBox fx:id="MemberIdCombo" layoutX="134.0" layoutY="264.0" minHeight="43.0" onAction="#ComboOnActhion" prefHeight="52.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
+      <ComboBox fx:id="MemberIdCombo" layoutX="133.0" layoutY="268.0" minHeight="43.0" onAction="#ComboOnActhion" prefHeight="72.0" prefWidth="539.0" styleClass="text-field1" stylesheets="@../../img/Styles/ViewBookPage.css" />
    </children>
 </AnchorPane>

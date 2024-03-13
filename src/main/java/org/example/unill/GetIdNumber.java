@@ -3,7 +3,7 @@ package org.example.unill;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class getIdNumber {
+public class GetIdNumber {
     public static int getIdNumber(String Type ,String Id){
 
         String pattern = null;
@@ -26,5 +26,11 @@ public class getIdNumber {
             else {
                 return 0;
             }
+    }
+}
+
+class Main{
+    public static void main(String[] args) {
+        System.out.println(GetIdNumber.getIdNumber("M","M01"));
     }
 }
