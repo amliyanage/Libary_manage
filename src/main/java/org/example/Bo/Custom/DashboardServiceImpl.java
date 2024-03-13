@@ -3,6 +3,7 @@ package org.example.Bo.Custom;
 import org.example.Bo.DashboardService;
 import org.example.Dao.AdminRepository;
 import org.example.Dao.BookRepository;
+import org.example.Dao.BorrowBookRepository;
 import org.example.Dao.BranchRepository;
 import org.example.Dao.Custom.RepositoryFactory;
 import org.example.Dto.AdminDto;
@@ -18,6 +19,7 @@ public class DashboardServiceImpl implements DashboardService {
 
     private final BranchRepository branchRepository = (BranchRepository) RepositoryFactory.getDaoFactory().getDao( RepositoryFactory.DaoType.Branch );
 
+    private final BorrowBookRepository borrowBookRepository = (BorrowBookRepository) RepositoryFactory.getDaoFactory().getDao( RepositoryFactory.DaoType.BorrowBook );
     private Session session;
     private Transaction transaction;
     @Override
@@ -67,6 +69,15 @@ public class DashboardServiceImpl implements DashboardService {
         session = SessionFactoryConfiguration.getInstance().getSession();
         branchRepository.SetSession(session);
         long count = branchRepository.Count();
+        session.close();
+        return count;
+    }
+
+    @Override
+    public long Payment(){
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        borrowBookRepository.SetSession(session);
+        long count = borrowBookRepository.Count();
         session.close();
         return count;
     }

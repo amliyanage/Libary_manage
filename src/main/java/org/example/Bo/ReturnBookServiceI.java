@@ -10,4 +10,6 @@ public interface ReturnBookServiceI extends SuperService{
     BorrowBook getPendingData(String value);
 
     boolean returnBook(BorrowBook borrowBook);
+
+    List<BorrowBook> getAllTableData();
 }

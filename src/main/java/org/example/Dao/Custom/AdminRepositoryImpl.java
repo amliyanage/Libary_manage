@@ -61,7 +61,9 @@ public class AdminRepositoryImpl implements AdminRepository {
 
     @Override
     public long Count() {
-        return 0;
+        String sqlQuery = "SELECT COUNT(*) FROM Admin";
+        Query query = session.createQuery(sqlQuery);
+        return (long) query.uniqueResult();
     }
 
     @Override

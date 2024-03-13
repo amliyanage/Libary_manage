@@ -12,4 +12,6 @@ public interface DashboardService extends SuperService {
     long MemberCount();
 
     long BranchCount();
+
+    long Payment();
 }

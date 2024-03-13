@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="64.21" prefWidth="1277.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.HisBookRowFormController">
+   <children>
+      <ImageView fitHeight="65.0" fitWidth="1277.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
+         <image>
+            <Image url="@../../img/Table_Load/bookHis.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Book_ID" layoutX="90.0" layoutY="22.0" prefHeight="25.0" prefWidth="117.0" stylesheets="@../../img/Styles/TableRow.css" text="Label" />
+      <Label fx:id="title" layoutX="450.0" layoutY="22.0" prefHeight="25.0" prefWidth="325.0" stylesheets="@../../img/Styles/TableRow.css" text="Label" />
+      <Label fx:id="returnBook" layoutX="1100.0" layoutY="21.0" prefHeight="25.0" prefWidth="158.0" stylesheets="@../../img/Styles/TableRow.css" text="Label" />
+   </children>
+</AnchorPane>

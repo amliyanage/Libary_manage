@@ -54,6 +54,7 @@ public class DashboardFormController {
         BookCount.setText(String.valueOf(dashboardService.BookCount()));
         BranchCount.setText(String.valueOf(dashboardService.BranchCount()));
         MemberCount.setText(String.valueOf(dashboardService.MemberCount()));
+        PaymentCount.setText(String.valueOf(dashboardService.Payment()));
     }
 
     @FXML

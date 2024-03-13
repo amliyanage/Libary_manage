@@ -1,5 +1,6 @@
 package org.example.Dao.Custom;
 
+import org.example.Bo.Custom.MemberServiceImpl;
 import org.example.Dao.BorrowBookRepository;
 import org.example.Entity.BorrowBook;
 import org.example.Entity.Member;
@@ -30,7 +31,10 @@ public class BorrowBookRepositoryImpl implements BorrowBookRepository {
 
     @Override
     public ArrayList<BorrowBook> getAll() {
-        return null;
+        String sql = "SELECT B FROM BorrowBook As B where B.member = :Member";
+        Query query = session.createQuery(sql);
+        query.setParameter("Member", MemberServiceImpl.member);
+        return (ArrayList<BorrowBook>) query.getResultList();
     }
 
     @Override
@@ -45,7 +49,10 @@ public class BorrowBookRepositoryImpl implements BorrowBookRepository {
 
     @Override
     public long Count() {
-        return 0;
+        String sql = "SELECT SUM(B.payment) FROM BorrowBook AS B";
+        Query query = session.createQuery(sql);
+        Double sum = (Double) query.getSingleResult();
+        return sum != null ? sum.longValue() : 0; // Return 0 if sum is null
     }
 
     @Override

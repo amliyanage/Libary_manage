@@ -54,7 +54,7 @@ public class BookViewFormController implements Initializable {
         DisText.setText(bookDto.getDis());
         genreText.setText(bookDto.getGenre());
 
-        if(bookDto.getAvailable().equals("yes")){
+        if(bookDto.getAvailable().equals("Yes")){
             lable.setStyle("-fx-background-color: green");
             lableText.setText("Yes");
         }

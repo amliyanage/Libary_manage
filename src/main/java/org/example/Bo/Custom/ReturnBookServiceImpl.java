@@ -9,7 +9,6 @@ import org.example.Dao.MemberRepository;
 import org.example.Entity.*;
 import org.example.unill.GetIdNumber;
 import org.example.unill.SessionFactoryConfiguration;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -134,4 +133,16 @@ public class ReturnBookServiceImpl implements ReturnBookServiceI {
             return false;
         }
     }
+
+    @Override
+    public List<BorrowBook> getAllTableData() {
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        borrowBookRepository.SetSession(session);
+        List<BorrowBook> all = borrowBookRepository.getAll();
+
+        session.close();
+
+        return all;
+    }
+
 }
