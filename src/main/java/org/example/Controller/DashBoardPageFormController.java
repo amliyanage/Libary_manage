@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import org.example.Bo.MemberDashboardServer;
 import org.example.Bo.ServiceFactor;
 import org.example.Dto.MemberDto;
@@ -19,6 +20,7 @@ public class DashBoardPageFormController implements Initializable {
 
     public TextField emailText;
     public TextField UsernameText;
+    public Text bookCount;
     @FXML
     private PasswordField PasswordFild;
 
@@ -55,6 +57,7 @@ public class DashBoardPageFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PasswordTextFild.setVisible(false);
         SetData();
+        getBookCount();
     }
 
     int Id = 0;
@@ -96,5 +99,10 @@ public class DashBoardPageFormController implements Initializable {
         else {
             new Alert(Alert.AlertType.INFORMATION,"Please Enter Valid Data").show();
         }
+    }
+
+    void getBookCount(){
+        int count = memberDashboardServer.BookCount(LoginPageController.memberUsername);
+        bookCount.setText(String.valueOf(count));
     }
 }

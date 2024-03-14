@@ -1,6 +1,7 @@
 package org.example.Bo.Custom;
 
 import org.example.Bo.MemberDashboardServer;
+import org.example.Dao.BorrowBookRepository;
 import org.example.Dao.Custom.RepositoryFactory;
 import org.example.Dao.MemberRepository;
 import org.example.Dto.MemberDto;
@@ -11,6 +12,8 @@ import org.hibernate.Transaction;
 
 public class MemberDashboardServerImpl implements MemberDashboardServer {
     private final MemberRepository memberRepository = (MemberRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.Member);
+
+    private final BorrowBookRepository borrowBook = (BorrowBookRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.BorrowBook);
     private Session session;
     private Transaction transaction;
     @Override
@@ -30,5 +33,16 @@ public class MemberDashboardServerImpl implements MemberDashboardServer {
         transaction = session.beginTransaction();
         transaction.commit();
         session.close();
+    }
+
+    @Override
+    public int BookCount(String memberUsername) {
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        memberRepository.SetSession(session);
+        Member data = memberRepository.getData(memberUsername);
+        borrowBook.SetSession(session);
+        int bookCount = borrowBook.BookCount(data);
+        session.close();
+        return bookCount;
     }
 }
