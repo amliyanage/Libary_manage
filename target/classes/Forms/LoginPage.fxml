@@ -19,11 +19,11 @@
       <TextField fx:id="Username" layoutX="1203.0" layoutY="434.0" promptText="Enter Yousername" />
       <PasswordField fx:id="PasswordFild" layoutX="1201.0" layoutY="597.0" promptText="Enter Password" />
       <TextField fx:id="PasswordTextFild" layoutX="1201.0" layoutY="597.0" promptText="Enter Password" visible="false" />
-      <CheckBox fx:id="MemberCheckBox" layoutX="1213.0" layoutY="723.0" mnemonicParsing="false" text="Member" />
+      <CheckBox fx:id="MemberCheckBox" layoutX="1213.0" layoutY="723.0" mnemonicParsing="false" onAction="#memberOnActhion" text="Member" />
       <Text layoutX="1658.0" layoutY="750.0" onMouseClicked="#forgetPasswordOnActhion" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="forget" text="Foget Password" />
       <Text layoutX="1291.0" layoutY="963.0" onMouseClicked="#RegisterHerebtnOnActhion" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_New_Account" text="Register Here" />
       <Button layoutX="1247.0" layoutY="811.0" mnemonicParsing="false" onAction="#LoginOnActhion" styleClass="buttonLogin" text="Login" />
       <Button fx:id="viewPass" layoutX="1743.0" layoutY="619.0" mnemonicParsing="false" onAction="#viewPassOnActhion" prefHeight="29.0" prefWidth="29.0" styleClass="eye" />
-      <CheckBox fx:id="AdminCheckBox" layoutX="1343.0" layoutY="723.0" mnemonicParsing="false" text="Admin" />
+      <CheckBox fx:id="AdminCheckBox" layoutX="1343.0" layoutY="723.0" mnemonicParsing="false" onAction="#AdminOnActhion" text="Admin" />
    </children>
 </AnchorPane>

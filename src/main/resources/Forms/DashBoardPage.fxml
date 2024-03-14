@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="1082.0" prefWidth="1611.0" styleClass="background" stylesheets="@../img/Styles/DashBoardPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.DashBoardPageFormController">
@@ -20,7 +21,10 @@
             <Image url="@../img/bookcount.png" />
          </image>
       </ImageView>
-      <Text layoutX="141.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="100" />
+      <Text fx:id="bookCount" fill="#cd3f3f" layoutX="141.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="100">
+         <font>
+            <Font size="43.0" />
+         </font></Text>
       <TextField fx:id="emailText" editable="false" layoutX="1143.0" layoutY="513.0" />
       <TextField fx:id="UsernameText" editable="false" layoutX="1144.0" layoutY="624.0" />
       <PasswordField fx:id="PasswordFild" editable="false" layoutX="1147.0" layoutY="735.0" />
@@ -31,5 +35,10 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password" />
          </graphic>
       </Button>
+      <ImageView fitHeight="621.0" fitWidth="653.0" layoutX="338.0" layoutY="433.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Library_Freepik.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

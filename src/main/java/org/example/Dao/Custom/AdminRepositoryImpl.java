@@ -2,6 +2,7 @@ package org.example.Dao.Custom;
 
 import org.example.Dao.AdminRepository;
 import org.example.Entity.Admin;
+import org.example.Entity.Member;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -74,5 +75,13 @@ public class AdminRepositoryImpl implements AdminRepository {
     @Override
     public void SetSession(Session session) {
         this.session = session;
+    }
+
+    @Override
+    public Admin CheckEmail(String email) {
+        String hql = "FROM Admin WHERE Email = :email";
+        Query<Admin> query = session.createQuery(hql, Admin.class);
+        query.setParameter("email", email);
+        return query.uniqueResult();
     }
 }

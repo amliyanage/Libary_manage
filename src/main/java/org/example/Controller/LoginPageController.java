@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.example.Controller.ForgetPassWord.ForgetPassWordFormController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,6 +28,8 @@ public class LoginPageController implements Initializable {
     public CheckBox AdminCheckBox;
 
     Boolean flag = false;
+
+    public static Stage stage ;
 
     MemberService memberService = (MemberService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Member);
     AdminService adminBo = (AdminService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Admin);
@@ -58,8 +61,10 @@ public class LoginPageController implements Initializable {
 
     public void LoginOnActhion(ActionEvent actionEvent) {
         if (MemberCheckBox.isSelected()){
+            ForgetPassWordFormController.user = "Member";
             Member_login();
         } else if (AdminCheckBox.isSelected()) {
+            ForgetPassWordFormController.user = "Admin";
             Admin_Login();
         }
         else {
@@ -130,5 +135,13 @@ public class LoginPageController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void memberOnActhion(ActionEvent actionEvent) {
+        ForgetPassWordFormController.user = "Member";
+    }
+
+    public void AdminOnActhion(ActionEvent actionEvent) {
+        ForgetPassWordFormController.user = "Admin";
     }
 }

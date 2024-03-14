@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="797.0" prefWidth="1355.0" stylesheets="@../img/Styles/forgetPass.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.ForgetPassWord.ConfirmForgetPassWordFormController">
+   <children>
+      <ImageView fitHeight="795.0" fitWidth="1356.0" layoutX="174.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../img/otp.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textField" layoutX="452.0" layoutY="510.0" minWidth="203.0" onAction="#emailOnActhion" prefHeight="88.0" prefWidth="451.0" styleClass="text-field" />
+      <Button layoutX="686.0" layoutY="644.0" mnemonicParsing="false" onAction="#loginBtnOnActhion" opacity="0.0" prefHeight="33.0" prefWidth="121.0" text="Button" />
+   </children>
+</AnchorPane>

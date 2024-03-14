@@ -14,7 +14,7 @@ import org.example.Dto.BranchDto;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class BranchFormController {
+public class    BranchFormController {
     public VBox TableBox;
 
     BranchService branchBo = (BranchService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Branch);

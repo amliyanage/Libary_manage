@@ -61,4 +61,12 @@ public class MemberRepositoryImpl implements MemberRepository {
     public void SetSession(Session session) {
         this.session = session;
     }
+
+    @Override
+    public Member CheckEmail(String email) {
+        String hql = "FROM Member WHERE email = :email";
+        Query<Member> query = session.createQuery(hql, Member.class);
+        query.setParameter("email", email);
+        return query.uniqueResult();
+    }
 }
