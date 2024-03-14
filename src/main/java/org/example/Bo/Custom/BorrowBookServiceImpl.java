@@ -68,7 +68,7 @@ public class BorrowBookServiceImpl implements BorrowBookService {
                     -1,
                     data.size(),
                     date,
-                    "No",
+                    "Pending",
                     null,
                     member,
                     0,
@@ -79,7 +79,7 @@ public class BorrowBookServiceImpl implements BorrowBookService {
             int saved = borrowBookRepository.saved(borrowBook);
 
             for (Books book : books) {
-                book.setAvailable("Pending");
+                book.setAvailable("No");
                 bookRepository.SetSession(session);
                 bookRepository.Update(book);
 
