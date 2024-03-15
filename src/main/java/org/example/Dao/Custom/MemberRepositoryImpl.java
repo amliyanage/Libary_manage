@@ -21,6 +21,11 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
     @Override
+    public Member getId(int id){
+        return session.get(Member.class, id);
+    }
+
+    @Override
     public List<String> getOneData() {
         return null;
     }

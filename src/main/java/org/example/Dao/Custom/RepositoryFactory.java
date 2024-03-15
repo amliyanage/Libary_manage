@@ -11,7 +11,7 @@ public class RepositoryFactory {
     }
 
     public enum DaoType{
-        Member ,admin, Books, Branch,Book_Transaction, BorrowBook
+        Member ,admin, Books, Branch,Book_Transaction, BorrowBook, Pending
     }
 
     public SuperRepository getDao(DaoType daoType ){
@@ -29,6 +29,8 @@ public class RepositoryFactory {
                 return new BookTransactionRepositoryImpl();
                 case BorrowBook:
                     return new BorrowBookRepositoryImpl();
+                case Pending:
+                    return new CustomRepositoryImpl();
             default:
                 return null;
         }

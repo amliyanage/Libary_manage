@@ -112,7 +112,7 @@ public class BorrowBookServiceImpl implements BorrowBookService {
         session = SessionFactoryConfiguration.getInstance().getSession();
 
         memberRepository.SetSession(session);
-        Member member = memberRepository.getData(""+memberId);
+        Member member = memberRepository.getId(memberId);
 
         borrowBookRepository.SetSession(session);
         BorrowBook data = borrowBookRepository.getPendingBook(member);

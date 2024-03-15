@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.example.Bo.ServiceFactor;
 import org.example.Bo.Custom.AdminServiceImpl;
@@ -88,5 +89,17 @@ public class DashboardFormController {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void bellBtnOnActhion(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Forms/Admin/PendingBookForm.fxml"));
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(fxmlLoader.load()));
+            stage.show();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
