@@ -1,9 +1,9 @@
 package org.example.Controller;
 
 import javafx.scene.control.*;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.MemberService;
-import org.example.Bo.AdminService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.MemberService;
+import org.example.Service.AdminService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="70.0" prefWidth="1118.0" stylesheets="@../../img/Styles/TableRow.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Table_Row.PendingRowFormController">
+   <children>
+      <ImageView fitHeight="70.0" fitWidth="1134.0" layoutX="-52.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../img/Table_Load/pending.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="ID" layoutX="33.0" layoutY="23.0" text="Label" />
+      <Label fx:id="MemberId" layoutX="151.0" layoutY="22.0" prefHeight="25.0" prefWidth="157.0" text="Label" />
+      <Label fx:id="name" layoutX="372.0" layoutY="20.0" prefHeight="25.0" prefWidth="241.0" text="Label" />
+      <Label fx:id="returnDate" layoutX="661.0" layoutY="20.0" prefHeight="25.0" prefWidth="266.0" text="Label" />
+      <Label fx:id="dateCount" layoutX="979.0" layoutY="20.0" prefHeight="25.0" prefWidth="134.0" text="Label" />
+   </children>
+</AnchorPane>

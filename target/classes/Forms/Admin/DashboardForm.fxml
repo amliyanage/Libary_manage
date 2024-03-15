@@ -43,6 +43,11 @@
       <TextField fx:id="PasswordTextFild" editable="false" layoutX="1147.0" layoutY="715.0" />
       <Button fx:id="viewPass" layoutX="1546.0" layoutY="726.0" minHeight="46.0" minWidth="46.0" mnemonicParsing="false" onAction="#viewPassOnActhion" prefHeight="27.0" prefWidth="25.0" styleClass="eye" />
       <Button layoutX="1229.0" layoutY="835.0" mnemonicParsing="false" onAction="#settingsBtnOnActhion" opacity="0.0" prefHeight="58.0" prefWidth="255.0" text="Button" />
+      <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="1501.0" layoutY="38.0" onMouseClicked="#bellBtnOnActhion" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/notification.png" />
+         </image>
+      </ImageView>
    </children>
    <stylesheets>
       <URL value="@../../img/Styles/AdminDashboard.css" />

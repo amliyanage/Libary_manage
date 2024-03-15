@@ -3,8 +3,8 @@ package org.example.Controller.Table_Row.Update;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.ManageBookService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.ManageBookService;
 import org.example.Dto.BookDto;
 import org.example.unill.Validation;
 

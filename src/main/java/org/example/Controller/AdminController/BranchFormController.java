@@ -6,8 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.BranchService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.BranchService;
 import org.example.Controller.Table_Row.BranchRowController;
 import org.example.Dto.BranchDto;
 

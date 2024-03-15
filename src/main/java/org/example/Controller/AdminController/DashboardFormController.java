@@ -10,9 +10,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.Custom.AdminServiceImpl;
-import org.example.Bo.DashboardService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.Custom.AdminServiceImpl;
+import org.example.Service.DashboardService;
 import org.example.Controller.Table_Row.Update.UpdateUserFormController;
 import org.example.Dto.AdminDto;
 

@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import org.example.Bo.MemberDashboardServer;
-import org.example.Bo.ServiceFactor;
+import org.example.Service.MemberDashboardServer;
+import org.example.Service.ServiceFactor;
 import org.example.Dto.MemberDto;
 import org.example.unill.Validation;
 
@@ -32,7 +32,7 @@ public class DashBoardPageFormController implements Initializable {
 
     Boolean flag = false;
 
-    private final MemberDashboardServer memberDashboardServer = (MemberDashboardServer) org.example.Bo.ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.MemberDashBoard);
+    private final MemberDashboardServer memberDashboardServer = (MemberDashboardServer) org.example.Service.ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.MemberDashBoard);
 
     @FXML
     void viewPassOnActhion(ActionEvent event) {

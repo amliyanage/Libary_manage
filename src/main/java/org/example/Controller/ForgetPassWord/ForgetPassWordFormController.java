@@ -5,13 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.example.Bo.ForgetMailService;
-import org.example.Bo.ServiceFactor;
-
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
+import org.example.Service.ForgetMailService;
+import org.example.Service.ServiceFactor;
 
 public class ForgetPassWordFormController {
 

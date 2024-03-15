@@ -5,9 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.Custom.AdminServiceImpl;
-import org.example.Bo.DashboardService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.Custom.AdminServiceImpl;
+import org.example.Service.DashboardService;
 import org.example.Dto.AdminDto;
 import org.example.unill.Validation;
 

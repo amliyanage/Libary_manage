@@ -3,8 +3,8 @@ package org.example.Controller.Table_Row.Save;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.UserMangeService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.UserMangeService;
 
 public class SaveUserFormController {
     @FXML

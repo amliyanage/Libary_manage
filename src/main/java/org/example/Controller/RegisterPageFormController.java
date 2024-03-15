@@ -12,8 +12,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.RegisterService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.RegisterService;
 import org.example.Dto.MemberDto;
 import org.example.unill.Validation;
 

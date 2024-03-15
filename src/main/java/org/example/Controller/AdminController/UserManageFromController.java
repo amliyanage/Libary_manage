@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.UserMangeService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.UserMangeService;
 import org.example.Controller.Table_Row.UserRowFromController;
 
 import java.io.IOException;

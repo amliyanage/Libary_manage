@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import org.example.Bo.ServiceFactor;
-import org.example.Bo.BranchService;
+import org.example.Service.ServiceFactor;
+import org.example.Service.BranchService;
 import org.example.Dto.BranchDto;
 import org.example.unill.Validation;
 
