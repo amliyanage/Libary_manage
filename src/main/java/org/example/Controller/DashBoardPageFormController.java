@@ -8,7 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import org.example.Service.Custom.MemberServiceImpl;
 import org.example.Service.MemberDashboardServer;
+import org.example.Service.MemberService;
 import org.example.Service.ServiceFactor;
 import org.example.Dto.MemberDto;
 import org.example.unill.Validation;
@@ -63,8 +65,11 @@ public class DashBoardPageFormController implements Initializable {
     int Id = 0;
     String name = "";
 
+    MemberDto data;
+
     void SetData(){
         MemberDto data = memberDashboardServer.getData(LoginPageController.memberUsername);
+        this.data = data;
         UsernameText.setText(data.getUsername());
         emailText.setText(data.getEmail());
         PasswordTextFild.setText(data.getPassword());
@@ -93,7 +98,9 @@ public class DashBoardPageFormController implements Initializable {
 
     void ChangePassword(){
         if (Validation.isValidEmail(emailText.getText())){
-            memberDashboardServer.Update(new MemberDto(Id,name,UsernameText.getText(),PasswordFild.getText(),emailText.getText()));
+            data.setPassword(PasswordFild.getText());
+            System.out.println(data);
+            memberDashboardServer.Update(data);
             new Alert(Alert.AlertType.INFORMATION,"Password Changed").show();
         }
         else {
