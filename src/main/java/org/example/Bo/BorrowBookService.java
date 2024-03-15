@@ -10,4 +10,6 @@ public interface BorrowBookService extends SuperService{
 
     BookDto getData(String title);
     boolean saveTransaction(List<String> data);
+
+    boolean getPendingBook(String id);
 }

@@ -5,16 +5,16 @@ import org.example.Dao.BookRepository;
 import org.example.Dao.BookTransactionRepository;
 import org.example.Dao.BorrowBookRepository;
 import org.example.Dao.Custom.RepositoryFactory;
+import org.example.Dao.MemberRepository;
 import org.example.Dto.BookDto;
 import org.example.Entity.Book_Transaction;
 import org.example.Entity.Books;
 import org.example.Entity.BorrowBook;
 import org.example.Entity.Member;
+import org.example.unill.GetIdNumber;
 import org.example.unill.SessionFactoryConfiguration;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.engine.transaction.internal.TransactionImpl;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -28,6 +28,7 @@ public class BorrowBookServiceImpl implements BorrowBookService {
     private final BookRepository bookRepository = (BookRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.Books);
     private final BorrowBookRepository borrowBookRepository = (BorrowBookRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.BorrowBook);
     private final BookTransactionRepository transactionRepository = (BookTransactionRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.Book_Transaction);
+    private final MemberRepository memberRepository = (MemberRepository) RepositoryFactory.getDaoFactory().getDao(RepositoryFactory.DaoType.Member);
 
     @Override
     public List<String> getTitles() {
@@ -103,6 +104,25 @@ public class BorrowBookServiceImpl implements BorrowBookService {
         } finally {
             session.close();
         }
+    }
 
+    @Override
+    public boolean getPendingBook(String id){
+        int memberId = GetIdNumber.getIdNumber("M", id);
+        session = SessionFactoryConfiguration.getInstance().getSession();
+
+        memberRepository.SetSession(session);
+        Member member = memberRepository.getData(""+memberId);
+
+        borrowBookRepository.SetSession(session);
+        BorrowBook data = borrowBookRepository.getPendingBook(member);
+        session.close();
+
+        if(data == null){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

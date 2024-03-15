@@ -76,4 +76,12 @@ public class BorrowBookRepositoryImpl implements BorrowBookRepository {
         query.setParameter("Member", data);
         return ((Long) query.uniqueResult()).intValue();
     }
+    @Override
+    public BorrowBook getPendingBook(Member id){
+        String sql = "SELECT B FROM BorrowBook As B where B.member = :Member and B.status = :status";
+        Query query = session.createQuery(sql);
+        query.setParameter("Member", id);
+        query.setParameter("status", "Pending");
+        return (BorrowBook) query.uniqueResult();
+    }
 }
